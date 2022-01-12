@@ -22,7 +22,6 @@ import LoginKark from './pages/seunghyunKark/Login/Login';
 function Router() {
   return (
     <BrowserRouter>
-      <Nav />
       <Routes>
         <Route path="/main-jaeminYu" element={<MainYu />} />
         <Route path="/login-jaeminYu" element={<LoginYu />} />

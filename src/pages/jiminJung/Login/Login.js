@@ -4,7 +4,9 @@ import React from 'react';
 export const Login = () => {
   return (
     <div>
-      <Nav />
+      <h1>로그인</h1>
     </div>
   );
 };
+
+export default Login;
