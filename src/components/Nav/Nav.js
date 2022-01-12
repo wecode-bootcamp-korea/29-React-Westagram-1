@@ -20,7 +20,7 @@ const Nav = () => {
         <div className="header-inner-wrap">
           <div className="logo-wrap">
             <img
-              src="/images/header_logo.png"
+              src="/images/common/header_logo.png"
               alt="logo"
               className="logo-calligraph"
             />
