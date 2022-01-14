@@ -18,10 +18,10 @@ function Login() {
           <input type="text" placeholder="전화번호, 사용자 이름 또는 이메일" />
           <input type="password" placeholder="비밀번호" />
           {/* <Link to="/Main"> */}
-          <button name="로그인" />
+          <button>로그인</button>
           {/* </Link> */}
         </div>
-        <a href=""> 비밀번호를 잊으셨나요?</a>
+        <a href="LostPassword"> 비밀번호를 잊으셨나요?</a>
       </div>
     </div>
   );
