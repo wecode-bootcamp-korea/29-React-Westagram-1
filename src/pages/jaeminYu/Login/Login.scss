@@ -1,0 +1,306 @@
+$font-small: 12px;
+$font-medium: 13px;
+$font-large: 14px;
+$font-bold: 600;
+$urlJaemin: '../../../../public/images/jaeminYu/';
+$urlCommon: '../../../../public/images/common/';
+
+@mixin elementSize($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin backgroundImgSetting() {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin elementPosition($display, $flexDirection, $justifyContent) {
+  display: $display;
+  flex-direction: $flexDirection;
+  justify-content: $justifyContent;
+}
+
+#LoginMain {
+  @include elementPosition(flex, row, center);
+  margin: 90px auto 0;
+  max-width: 935px;
+  padding-bottom: 32px;
+  width: 100%;
+  align-items: center;
+  font-size: $font-small;
+
+  /* 좌측 phone */
+  #aside {
+    flex-basis: 454px;
+    height: 618px;
+    background: url($urlJaemin + 'login_mockup.png');
+    @include backgroundImgSetting();
+    margin-left: -51px;
+    margin-right: -17px;
+    margin-top: -60px;
+  }
+
+  #phone-wrap {
+    margin: 100px 0 0 152px;
+    position: relative;
+  }
+
+  #img-wrap {
+    @include elementSize(240px, 427px);
+    position: relative;
+  }
+
+  .phone-img {
+    @include elementSize(100%, 100%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    visibility: hidden;
+  }
+
+  .phone-img-root {
+    visibility: visible;
+    z-index: 2;
+  }
+
+  /* 우측 login */
+  #section {
+    @include elementSize(350px, 618px);
+  }
+
+  #login-wrap {
+    background: #fff;
+    border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+    padding: 10px 0;
+    margin-bottom: 10px;
+  }
+
+  #login-box {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  #logo {
+    @include elementSize(175px, 51px);
+    background-position: 0 -129px;
+    margin: 22px auto 12px;
+  }
+
+  .img-sprite {
+    background: url($urlCommon + 'imgstripe.png') no-repeat;
+    background-size: 440px 411px;
+    background-position: 0 -129px;
+  }
+
+  #input-wrap {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .user-loing-txt {
+    @include elementSize(268px, 36px);
+    padding: auto;
+  }
+
+  .user-loing-txt:first-child {
+    margin-top: 24px;
+    margin-bottom: 6px;
+  }
+
+  .user-loing-txt:last-child {
+    margin-top: 14px;
+  }
+
+  .write-box,
+  #login-btn {
+    @include elementSize(100%, 100%);
+    overflow: hidden;
+    font-size: $font-small;
+    border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+    padding: 0 10px;
+    color: rgba(var(--i1d, 38, 38, 38), 1);
+    border-radius: 4px;
+    background: #fafafa;
+  }
+
+  .action-txt {
+    position: absolute;
+    display: block;
+    @include elementSize('', 36px);
+    line-height: 36px;
+    padding-left: 10px;
+    font-size: $font-small;
+    color: rgba(var(--f52, 142, 142, 142), 1);
+  }
+
+  #login-btn {
+    display: inline-block;
+    height: 30px;
+    opacity: 0.5;
+    text-align: center;
+    background: #0095f6;
+    border: none;
+    color: #fff;
+    font-size: $font-large;
+    line-height: 30px;
+    font-weight: $font-bold;
+    pointer-events: none;
+    cursor: default;
+  }
+
+  #login-btn:hover {
+    opacity: 0.5;
+    background: #0095f6;
+    border: none;
+  }
+
+  #boundary-wrap {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin: 10px 40px 18px;
+  }
+
+  #or {
+    font-size: $font-medium;
+    margin: 0 18px;
+    color: rgba(var(--f52, 142, 142, 142), 1);
+    font-weight: $font-bold;
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+
+  #boundary-line {
+    background: rgba(var(--b38, 219, 219, 219), 1);
+    height: 1px;
+    margin-top: 0.5em;
+    flex-shrink: 1;
+    flex-grow: 1;
+  }
+
+  #find {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 40px;
+    text-align: center;
+  }
+
+  #find-facebook {
+    cursor: pointer;
+    margin-bottom: 8px;
+  }
+
+  .facebook-icon {
+    display: inline-block;
+    @include elementSize(16px, 16px);
+    background-position: -347px -329px;
+    margin-right: 8px;
+    position: relative;
+    top: 3px;
+  }
+
+  .login-txt {
+    color: #385185;
+    font-size: $font-large;
+    line-height: 18px;
+    font-weight: $font-bold;
+  }
+
+  #find-password {
+    color: rgba(var(--fe0, 0, 55, 107), 1);
+    margin-top: 12px;
+  }
+
+  #join-wrap {
+    border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+    background: #fff;
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  #join-wrap span {
+    font-size: $font-large;
+    color: rgba(var(--i1d, 38, 38, 38), 1);
+  }
+
+  #join-wrap a {
+    font-size: $font-large;
+    color: rgba(var(--d69, 0, 149, 246), 1);
+    font-weight: $font-bold;
+  }
+
+  #download-wrap {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #download-wrap p {
+    margin: 10px 0;
+    color: rgba(var(--i1d, 38, 38, 38), 1);
+    font-size: $font-large;
+    line-height: 18px;
+  }
+
+  #btn-wrap {
+    margin: 10px 0;
+  }
+
+  #btn-wrap a {
+    display: inline-block;
+    width: 136px;
+    height: 40px;
+    margin: 0 2px;
+  }
+
+  #btn-wrap a img {
+    @include elementSize(100%, 100%);
+  }
+}
+
+#footer {
+  margin-bottom: 52px;
+  max-width: 935px;
+  margin: 0 auto;
+  padding: 24px 120px 0;
+  font-size: $font-small;
+}
+
+#footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#footer ul li {
+  margin: 0 8px 12px;
+  color: rgba(var(--f52, 142, 142, 142), 1);
+}
+
+#copyright {
+  text-align: center;
+  margin: 12px 0;
+}
+
+#copyright span {
+  color: rgba(var(--f52, 142, 142, 142), 1);
+  margin-left: 15px;
+}
+
+#languege {
+  background: transparent;
+  border: none;
+  font-size: $font-small;
+  color: rgba(var(--f52, 142, 142, 142), 1);
+}
+
+/* [Mission] 추가 구현 사항 - Mission 9 | 반응형 구현 */
+@media screen and (max-width: 1000px) {
+  #aside {
+    display: none;
+  }
+}

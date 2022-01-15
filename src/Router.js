@@ -1,8 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Nav from './components/Nav/Nav';
-
 // 재민's 컴포넌트
 import MainYu from './pages/jaeminYu/Main/Main';
 import LoginYu from './pages/jaeminYu/Login/Login';
