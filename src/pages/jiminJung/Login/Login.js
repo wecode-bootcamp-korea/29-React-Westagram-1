@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './Login.scss';
 
-// import Button from '../components/Button';
-// import Input from '../components/Input';
+import LoginForm from './LoginForm.js';
 
 function Login() {
+  const [useIdInput, setUsedIdInput] = useState('');
+  const handleIdInput = i => {
+    setUsedIdInput(i.target.value);
+  };
+  const [usePwInput, setUsedPwInput] = useState('');
+  const handlePwInput = p => {
+    setUsedPwInput(p.target.value);
+  };
   return (
     <div className="loginWrapper">
       <div className="login">
@@ -14,13 +21,12 @@ function Login() {
           alt=""
           src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png"
         />
-        <div className="loginForm">
-          <input type="text" placeholder="전화번호, 사용자 이름 또는 이메일" />
-          <input type="password" placeholder="비밀번호" />
-          {/* <Link to="/Main"> */}
-          <button>로그인</button>
-          {/* </Link> */}
-        </div>
+        <LoginForm
+          valueId={useIdInput}
+          onChangeId={handleIdInput}
+          valuePw={usePwInput}
+          onChangePw={handlePwInput}
+        />
         <a href="LostPassword"> 비밀번호를 잊으셨나요?</a>
       </div>
     </div>
