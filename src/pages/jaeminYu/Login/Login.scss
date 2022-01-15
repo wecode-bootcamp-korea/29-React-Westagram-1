@@ -139,7 +139,6 @@ $urlCommon: '../../../../public/images/common/';
   #login-btn {
     display: inline-block;
     height: 30px;
-    opacity: 0.5;
     text-align: center;
     background: #0095f6;
     border: none;
@@ -147,14 +146,24 @@ $urlCommon: '../../../../public/images/common/';
     font-size: $font-large;
     line-height: 30px;
     font-weight: $font-bold;
-    pointer-events: none;
-    cursor: default;
   }
 
   #login-btn:hover {
     opacity: 0.5;
     background: #0095f6;
     border: none;
+  }
+
+  .btnActive {
+    opacity: 1;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+  .btnInActive {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
   }
 
   #boundary-wrap {

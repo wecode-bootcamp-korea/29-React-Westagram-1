@@ -4,16 +4,18 @@ import '../Login/Login.scss';
 import { useState } from 'react';
 
 export const Login = () => {
-  const [idInputValue, setIdInputValue] = useState(null);
-  const [pwInputValue, setPwInputValue] = useState(null);
+  const [idInputValue, setIdInputValue] = useState('');
+  const [pwInputValue, setPwInputValue] = useState('');
+  const [loginBtn, setLoginBtn] = useState('btnInActive');
 
-  // event : navtgation
+  // Event : Navigation
+  // 추가사항 1) 로그인 버튼 활성화 됬을 때만 url이 입력되도록 변경
   const nav = useNavigate();
   const goToHome = () => {
-    nav('/main-jaeminYu');
+    if (loginBtn === 'btnActive') nav('/main-jaeminYu');
   };
 
-  // event : vaule save
+  // Mission 1) Login | 사용자 입력 데이터 저장
   const IdInputHandler = event => {
     setIdInputValue(event.target.value);
   };
@@ -22,32 +24,12 @@ export const Login = () => {
     setPwInputValue(event.target.value);
   };
 
-  // document.addEventListener('input', function () {
-  //   const idBtn = document.getElementsByClassName('id-write-box')[0];
-  //   const pwBtn = document.getElementsByClassName('pw-write-box')[0];
-  //   const loginBtn = document.getElementById('login-btn');
-  //   const idTxt = document.getElementsByClassName('id-action-txt')[0];
-  //   const pwTxt = document.getElementsByClassName('pw-action-txt')[0];
-
-  //   if (
-  //     idBtn.value.length >= 1 &&
-  //     pwBtn.value.length >= 5 &&
-  //     idBtn.value.includes('@')
-  //   ) {
-  //     loginBtn.style.opacity = '1';
-  //     loginBtn.style.cursor = 'pointer';
-  //     loginBtn.style.pointerEvents = 'auto';
-  //   } else {
-  //     loginBtn.style.opacity = '0.5';
-  //     loginBtn.style.cursor = 'default';
-  //     loginBtn.style.pointerEvents = 'none';
-  //   }
-
-  //   const TxtAction = (btn, txt) =>
-  //     btn.value.length >= 1 ? (txt.style.display = 'none') : false;
-  //   TxtAction(idBtn, idTxt);
-  //   TxtAction(pwBtn, pwTxt);
-  // });
+  // Mission 2) Login | 로그인 버튼 활성화 (validation)
+  const LoginBtnHandler = () => {
+    idInputValue.includes('@') && pwInputValue.length > 4
+      ? setLoginBtn('btnActive')
+      : setLoginBtn('btnInActive');
+  };
 
   return (
     <div>
@@ -95,8 +77,9 @@ export const Login = () => {
                   <input
                     id="inputId"
                     type="text"
-                    className="write-box id-write-box"
+                    className={'write-box id-write-box'}
                     onChange={IdInputHandler}
+                    onKeyUp={LoginBtnHandler}
                   />
                 </label>
                 <label className="user-loing-txt">
@@ -106,10 +89,15 @@ export const Login = () => {
                     type="password"
                     className="write-box pw-write-box"
                     onChange={PwInputHandler}
+                    onKeyUp={LoginBtnHandler}
                   />
                 </label>
                 <label className="user-loing-txt">
-                  <button id="login-btn" onClick={goToHome}>
+                  <button
+                    id="login-btn"
+                    className={loginBtn}
+                    onClick={goToHome}
+                  >
                     로그인
                   </button>
                   {/* <Link to="/home" id="login-btn">로그인</Link> */}
