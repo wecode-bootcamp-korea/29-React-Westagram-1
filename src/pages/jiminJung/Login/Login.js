@@ -5,13 +5,12 @@ import './Login.scss';
 import LoginForm from './LoginForm.js';
 
 function Login() {
-  const [useIdInput, setUsedIdInput] = useState('');
-  const handleIdInput = i => {
-    setUsedIdInput(i.target.value);
-  };
-  const [usePwInput, setUsedPwInput] = useState('');
-  const handlePwInput = p => {
-    setUsedPwInput(p.target.value);
+  const [useIdInput, setUseIdInput] = useState('');
+  const [isBtn, setIsBtn] = useState(true);
+
+  const handleBtn = b => {
+    setUseIdInput(b.target.value);
+    b.target.value.includes('@') ? setIsBtn(!isBtn) : setIsBtn(isBtn);
   };
   return (
     <div className="loginWrapper">
@@ -23,9 +22,10 @@ function Login() {
         />
         <LoginForm
           valueId={useIdInput}
-          onChangeId={handleIdInput}
-          valuePw={usePwInput}
-          onChangePw={handlePwInput}
+          onChangeId={handleBtn}
+          // valuePw={usePwInput}
+          // onChangePw={handlePwInput}
+          disabled={isBtn}
         />
         <a href="LostPassword"> 비밀번호를 잊으셨나요?</a>
       </div>
