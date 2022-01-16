@@ -6,10 +6,12 @@ import LoginForm from './LoginForm.js';
 
 function Login() {
   const [useIdInput, setUseIdInput] = useState('');
+  const [usePwInput, setUsePwInput] = useState('');
   const [isBtn, setIsBtn] = useState(true);
 
   const handleBtn = b => {
     setUseIdInput(b.target.value);
+    setUsePwInput(b.target.value);
     b.target.value.includes('@') ? setIsBtn(!isBtn) : setIsBtn(isBtn);
   };
   return (
@@ -23,8 +25,8 @@ function Login() {
         <LoginForm
           valueId={useIdInput}
           onChangeId={handleBtn}
-          // valuePw={usePwInput}
-          // onChangePw={handlePwInput}
+          valuePw={usePwInput}
+          // onChangePw=
           disabled={isBtn}
         />
         <a href="LostPassword"> 비밀번호를 잊으셨나요?</a>
