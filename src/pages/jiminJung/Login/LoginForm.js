@@ -13,9 +13,6 @@ function LoginForm(props) {
         type="text"
         placeholder="전화번호, 사용자 이름 또는 이메일"
       />
-      <h5>
-        Id : {props.valueId}, PW : {props.valuePw}{' '}
-      </h5>
       <input
         value={props.valuePw}
         onChange={props.onChangePw}

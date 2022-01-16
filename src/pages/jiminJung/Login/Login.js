@@ -17,8 +17,8 @@ function Login() {
   };
   const handleBtn = b => {
     idInput.includes('@') && pwInput.length > 4
-      ? setIsBtn(!isBtn)
-      : setIsBtn(isBtn);
+      ? setIsBtn(false)
+      : setIsBtn(true);
   };
   return (
     <div className="loginWrapper">
