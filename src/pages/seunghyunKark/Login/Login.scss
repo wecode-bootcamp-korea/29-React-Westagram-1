@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap');
+@font-face {
+  font-family: system;
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: 1;
+  src: local('.SFNSText-Light'), local('.HelveticaNeueDeskInterface-Light'),
+    local('.LucidaGrandeUI'), local('Ubuntu Light'), local('Segoe UI Light'),
+    local('Roboto-Light'), local('DroidSans'), local('Tahoma');
+}
+
+* {
+  font-family: 'system', sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+$border-style: 1px solid #dbdbdb;
+
+.body {
+  height: 100vh;
+  background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .main1 {
+    width: 350px;
+
+    .login-container {
+      border: $border-style;
+      background-color: #fff;
+      border-radius: 3px;
+
+      section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      section:nth-child(1) {
+        header {
+          font-size: 48px;
+          font-family: 'Lobster Two', cursive;
+          margin: 32px auto 12px;
+        }
+      }
+      section:nth-child(2) {
+        flex-direction: column;
+        margin: 24px 0 24px 0;
+
+        input {
+          padding: 0 0 0 8px;
+          width: 268px;
+          height: 38px;
+          border: $border-style;
+          background-color: #fafafa;
+          font-size: 12px;
+          margin: 0 0 6px 0;
+          border-radius: 3px;
+
+          &:focus {
+            border: 1px solid #929292;
+          }
+        }
+
+        input[type='submit'] {
+          margin-top: 12px;
+          width: 268px;
+          height: 30px;
+          border: none;
+          color: #fff;
+          background-color: #0095f6;
+          opacity: 0.5;
+          border-radius: 3px;
+          font-weight: bold;
+        }
+      }
+      section:nth-child(3) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .forgotPassword {
+          margin: 40px 0 40px 0;
+          font-size: 12px;
+          color: #00376b;
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+}
