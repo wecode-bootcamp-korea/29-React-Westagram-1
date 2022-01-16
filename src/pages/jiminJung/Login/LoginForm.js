@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import './LoginForm.scss';
+import { Link } from 'react-router-dom';
 
 function LoginForm(props) {
   return (
@@ -18,9 +19,9 @@ function LoginForm(props) {
         type="text"
         placeholder="비밀번호"
       />
-      {/* <Link to="/Main"> */}
-      <button disabled={props.disabled ? true : false}>로그인</button>
-      {/* </Link> */}
+      <Link to="/main-jiminJung">
+        <button disabled={props.disabled ? true : false}>로그인</button>
+      </Link>
     </div>
   );
 }

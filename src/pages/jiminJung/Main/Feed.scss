@@ -1,0 +1,141 @@
+.feed {
+  border: 1px solid #dbdbdb;
+  display: flex;
+  flex-direction: column;
+}
+
+.feedUserBar {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 20px;
+  align-items: center;
+
+  .feedUserImg {
+    width: 25px;
+    height: 25px;
+    margin-right: 12px;
+  }
+
+  .feedMore {
+    margin: 5px;
+    font-weight: 900;
+  }
+}
+
+.feedImgWrapper {
+  width: 600px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.feedImg {
+  width: 100%;
+}
+.feedBottom {
+  display: flex;
+  flex-direction: column;
+  // p {
+  //     margin: 5px 5px 0 0;
+  // }
+  // a {
+  //     margin: 5px 5px;
+  // }
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.leftIcons {
+  display: flex;
+  margin: 5px 0;
+  width: 70px;
+  justify-content: space-between;
+}
+
+.bookMark {
+  margin: 5px 0;
+}
+
+.whoLoves {
+  font-size: 14px;
+  display: flex;
+}
+.feedUserImg {
+  width: 15px;
+  height: 15px;
+  margin-right: 3px;
+}
+
+.feedText a {
+  font-size: 14px;
+  text-decoration-line: none;
+  color: black;
+  font-weight: 500;
+  margin: 0;
+}
+
+.feedTextWrite {
+  font-size: 14px;
+  display: flex;
+  align-items: baseline;
+
+  p {
+    width: 400px;
+    height: 14px;
+    overflow: hidden;
+    margin: 0 0 0 5px;
+  }
+}
+
+.comment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .commentText {
+    display: flex;
+    align-items: baseline;
+    p {
+      font-size: 14px;
+      margin: 0 0 0 5px;
+    }
+
+    a {
+      font-size: 14px;
+      text-decoration-line: none;
+      color: black;
+      font-weight: 500;
+      margin: 0;
+    }
+  }
+  .commentHeart {
+    margin-right: 3px;
+  }
+}
+
+.newComment {
+  margin: 5px auto;
+}
+.writeComment {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  width: 100%;
+  height: 30px;
+  border: 1px solid #dbdbdb;
+  border-right: 0px;
+  border-left: 0px;
+}
+
+.commentBtn {
+  position: absolute;
+  right: 1px;
+  border: 0px;
+  background-color: #fff;
+}
