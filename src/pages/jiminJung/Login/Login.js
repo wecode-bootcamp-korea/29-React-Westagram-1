@@ -5,14 +5,20 @@ import './Login.scss';
 import LoginForm from './LoginForm.js';
 
 function Login() {
-  const [useIdInput, setUseIdInput] = useState('');
-  const [usePwInput, setUsePwInput] = useState('');
+  const [idInput, setIdInput] = useState('');
+  const [pwInput, setPwInput] = useState('');
   const [isBtn, setIsBtn] = useState(true);
 
+  const handleIdInput = e => {
+    setIdInput(e.target.value);
+  };
+  const handlePwInput = e => {
+    setPwInput(e.target.value);
+  };
   const handleBtn = b => {
-    setUseIdInput(b.target.value);
-    setUsePwInput(b.target.value);
-    b.target.value.includes('@') ? setIsBtn(!isBtn) : setIsBtn(isBtn);
+    idInput.includes('@') && pwInput.length > 4
+      ? setIsBtn(!isBtn)
+      : setIsBtn(isBtn);
   };
   return (
     <div className="loginWrapper">
@@ -23,10 +29,10 @@ function Login() {
           src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png"
         />
         <LoginForm
-          valueId={useIdInput}
-          onChangeId={handleBtn}
-          valuePw={usePwInput}
-          // onChangePw=
+          onChangeId={handleIdInput}
+          onKeyUpId={handleBtn}
+          onChangePw={handlePwInput}
+          onKeyUpPw={handleBtn}
           disabled={isBtn}
         />
         <a href="LostPassword"> 비밀번호를 잊으셨나요?</a>
