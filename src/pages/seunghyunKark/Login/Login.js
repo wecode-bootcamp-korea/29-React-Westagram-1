@@ -7,32 +7,27 @@ function Login(props) {
   const navigate = useNavigate();
 
   const goToMain = () => {
-    navigate('/main-seunghyunKark');
-  };
-
-  //state, props를 이용한 로그인 함수
-  const [idValue, setIdValue] = useState();
-  const handleIdInput = ({ target }) => setIdValue(target.value);
-
-  const [pwValue, setPwValue] = useState();
-  const handlePwInput = ({ target }) => setPwValue(target.value);
-  /*
-  const validation = () => {
-    const id = document.querySelector('.id');
-    const password = document.querySelector('.password');
-    const submit = document.querySelector('.submit');
-
-    if (id.value.includes('@') && password.value.length > 7) {
-      submit.disabled = false;
-      submit.style.opacity = 1;
+    if (idValue.includes('@') && pwValue.length > 7) {
+      navigate('/main-seunghyunKark');
+      setOpa({ opacity: 1 });
+    } else if (!idValue.includes('@') && pwValue.length > 7) {
+      alert('ID에는 @가 포함되어야 합니다');
+    } else if (idValue.includes('@') && pwValue.length < 8) {
+      alert('PW는 8글자 이상이어야 합니다');
     } else {
-      submit.disabled = true;
-      submit.style.opacity = 0.5;
+      alert('ID에는 @가 포함되어야 하며, PW는 8글자 이상이어야 합니다');
     }
   };
-  function handleIdInput(props)=>{
-  }
-  */
+
+  //state 로그인
+  const [idValue, setIdValue] = useState('');
+  const handleIdInput = ({ target }) => setIdValue(target.value);
+
+  const [pwValue, setPwValue] = useState('');
+  const handlePwInput = ({ target }) => setPwValue(target.value);
+
+  const [opa, setOpa] = useState({ opacity: 0.5 });
+
   //렌더링 하는 곳
   return (
     <div className="body">
@@ -46,12 +41,14 @@ function Login(props) {
               className="id"
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
+              value={idValue}
               onChange={handleIdInput}
             />
             <input
               className="password"
               type="password"
               placeholder="비밀번호"
+              value={pwValue}
               onChange={handlePwInput}
             />
             <input
@@ -59,12 +56,13 @@ function Login(props) {
               type="submit"
               value="로그인"
               onClick={goToMain}
+              style={opa}
             />
           </section>
           <section>
             <div>또는</div>
             <div>headbook으로 로그인 하기</div>
-            <div class="forgotPassword">비밀번호를 잊으셨나요?</div>
+            <div className="forgotPassword">비밀번호를 잊으셨나요?</div>
           </section>
         </div>
         <div>
