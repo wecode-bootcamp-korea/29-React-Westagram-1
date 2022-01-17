@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
   FiMoreHorizontal,
@@ -9,6 +9,38 @@ import {
 } from 'react-icons/fi';
 
 function Feed() {
+  /*let section = document.querySelector('.feed-section');
+  let addCommentButton = document.querySelector('.add-comment');
+  let feedContent = document.querySelector('.feed-content');
+  let commentInput = document.querySelector('.comment');
+  let commentInputContainer = document.querySelector('.comment-container');
+  let userName = 'vittoria.kark';
+
+  addCommentButton.addEventListener('click', () => {
+    let newComment = document.createElement('DIV');
+    newComment.textContent = `${userName} ${commentInput.value}`;
+    newComment.classList.add('comment-hidden');
+    userName.classList.add('bold');
+    section.insertBefore(newComment, commentInputContainer);
+    commentInput.value = '';
+  });
+
+  commentInput.addEventListener('keydown', event => {
+    if (event.keyCode === 13) {
+      let newComment = document.createElement('DIV');
+      newComment.textContent = `vittoria.kark  ${commentInput.value}`;
+      newComment.classList.add('comment-hidden');
+      section.insertBefore(newComment, commentInputContainer);
+      commentInput.value = '';
+    }
+  });
+  */
+  const [comment, setComment] = useState('');
+  const handleChange = ({ target }) => setComment(target.value);
+
+  const commentList = [];
+  const commentUpload = () => {};
+
   return (
     <section className="feed-section">
       <div className="feeds-profile">
@@ -48,9 +80,22 @@ function Feed() {
         <span className="bold">iam.chiara.rossi</span> Tea time!
       </article>
       <div className="feeds-minute">59분 전</div>
+      {commentList.map((comment, i) => (
+        <div key={'comment' + i}>
+          <span className="bold"> vittoriakark</span> {comment}
+        </div>
+      ))}
       <div className="comment-container">
-        <input className="comment" type="text" placeholder="댓글 달기..." />
-        <button className="add-comment">게시</button>
+        <input
+          className="comment"
+          type="text"
+          placeholder="댓글 달기..."
+          value={comment}
+          onChange={commentUpload}
+        />
+        <button className="add-comment" onClick={() => commentUpload()}>
+          게시
+        </button>
       </div>
     </section>
   );

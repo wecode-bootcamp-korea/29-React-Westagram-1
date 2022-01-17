@@ -22,10 +22,7 @@ function Main() {
             <div className="main-right-fixing">
               <div className="profile">
                 <div className="profile-img-container">
-                  <img
-                    src="images/seunghyunKark/profile1.jpg"
-                    alt="profile picture"
-                  />
+                  <img src="images/seunghyunKark/profile1.jpg" alt="profile" />
                 </div>
                 <div id="profile-info">
                   <div className="id bold">vittoria.kark</div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Login.scss';
 import { useNavigate } from 'react-router-dom';
 
@@ -7,16 +7,13 @@ function Login(props) {
   const navigate = useNavigate();
 
   const goToMain = () => {
-    if (idValue.includes('@') && pwValue.length > 7) {
-      navigate('/main-seunghyunKark');
-      setOpa({ opacity: 1 });
-    } else if (!idValue.includes('@') && pwValue.length > 7) {
-      alert('ID에는 @가 포함되어야 합니다');
-    } else if (idValue.includes('@') && pwValue.length < 8) {
-      alert('PW는 8글자 이상이어야 합니다');
-    } else {
-      alert('ID에는 @가 포함되어야 하며, PW는 8글자 이상이어야 합니다');
-    }
+    return idValue.includes('@') && pwValue.length > 7
+      ? navigate('/main-seunghyunKark')
+      : !idValue.includes('@') && pwValue.length > 7
+      ? alert('ID에는 @가 포함되어야 합니다')
+      : idValue.includes('@') && pwValue.length < 8
+      ? alert('PW는 8글자 이상이어야 합니다')
+      : alert('ID에는 @가 포함되어야 하며, PW는 8글자 이상이어야 합니다');
   };
 
   //state 로그인
@@ -24,9 +21,21 @@ function Login(props) {
   const handleIdInput = ({ target }) => setIdValue(target.value);
 
   const [pwValue, setPwValue] = useState('');
-  const handlePwInput = ({ target }) => setPwValue(target.value);
+  const handlePwInput = ({ target }) => {
+    setPwValue(target.value);
+    if (idValue.includes('@') && pwValue.length > 6) {
+      setOpa({ opacity: 1 });
+    } else {
+      setOpa({ opacity: 0.5 });
+    }
+  };
 
   const [opa, setOpa] = useState({ opacity: 0.5 });
+
+  //useEffect(() => {
+  //console.log(idValue);
+  //console.log(pwValue);
+  //});
 
   //렌더링 하는 곳
   return (
@@ -55,8 +64,8 @@ function Login(props) {
               className="submit"
               type="submit"
               value="로그인"
-              onClick={goToMain}
               style={opa}
+              onClick={goToMain}
             />
           </section>
           <section>
