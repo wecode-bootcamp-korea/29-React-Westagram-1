@@ -10,10 +10,7 @@ function Recommendation(props) {
       <div className="recommendation-stack">
         <div className="recommended-users">
           <div className="aside-profile-img-container">
-            <img
-              src="/images/seunghyunKark/profile6.jpg"
-              alt="profile picture"
-            />
+            <img src="/images/seunghyunKark/profile6.jpg" alt="profile" />
           </div>
           <div className="profile-info">
             <div className="bold">alohavittoria</div>
@@ -25,10 +22,7 @@ function Recommendation(props) {
       <div className="recommendation-stack">
         <div className="recommended-users">
           <div className="aside-profile-img-container">
-            <img
-              src="/images/seunghyunKark/profile5.jpeg"
-              alt="profile picture"
-            />
+            <img src="/images/seunghyunKark/profile5.jpeg" alt="profile" />
           </div>
           <div className="profile-info">
             <div className="bold">alohavittoria</div>
@@ -40,10 +34,7 @@ function Recommendation(props) {
       <div className="recommendation-stack">
         <div className="recommended-users">
           <div className="aside-profile-img-container">
-            <img
-              src="/images/seunghyunKark/profile4.jpeg"
-              alt="profile picture"
-            />
+            <img src="/images/seunghyunKark/profile4.jpeg" alt="profile" />
           </div>
           <div className="profile-info">
             <div className="bold">alohavittoria</div>
