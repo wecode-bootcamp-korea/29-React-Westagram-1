@@ -10,6 +10,7 @@ import {
 import { FiSend } from 'react-icons/fi';
 
 import User from './User';
+import Comments from './Comments';
 
 function Feed() {
   return (
@@ -62,19 +63,7 @@ function Feed() {
             </p>
           </div>
         </div>
-        <div class="comments">
-          <div className="comment">
-            <div className="commentText">
-              <a href="/">username</a>
-              <p>바다다~</p>
-            </div>
-            <FaRegHeart className="commentHeart" size="15px" />
-          </div>
-        </div>
-        <div className="writeComment">
-          <input type="text" placeholder="댓글 달기..." />
-          <button className="commentBtn">게시</button>
-        </div>
+        <Comments />
       </div>
     </div>
   );
