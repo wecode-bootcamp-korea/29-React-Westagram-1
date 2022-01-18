@@ -1,0 +1,109 @@
+.body2 {
+  main {
+    .main-container {
+      .feeds {
+        width: 614px;
+        margin: 0 28px 0 0;
+
+        section {
+          border: 1px solid #dbdbdb;
+          border-radius: 3px;
+
+          .feeds-like,
+          .interaction-bar,
+          article,
+          .feeds-minute {
+            padding: 0 16px;
+          }
+
+          .feeds-profile {
+            justify-content: space-between;
+            padding: 0 16px 0 14px;
+            height: 60px;
+
+            .profile-container {
+              .feeds-profile-img {
+                width: 40px;
+                height: 40px;
+                overflow: hidden;
+                border-radius: 20px;
+                margin-right: 14px;
+              }
+            }
+
+            .fa-ellipsis-h {
+              height: 24px;
+              width: 24px;
+            }
+          }
+
+          .interaction-bar {
+            justify-content: space-between;
+            height: 54px;
+
+            .fa-heart,
+            .fa-comment,
+            .fa-paper-plane,
+            .fa-bookmark {
+              width: 24px;
+              height: 24px;
+              margin: 0 8px 0 0;
+            }
+          }
+
+          .feeds-like {
+            font-size: 14px;
+            height: 18px;
+            margin: 0 0 8px;
+
+            .like-profile-img {
+              width: 14px;
+              height: 14px;
+              border-radius: 7px;
+              overflow: hidden;
+              margin-right: 4px;
+
+              img {
+                width: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+
+          .feed-content {
+            height: 22px;
+          }
+
+          .feeds-minute {
+            margin-top: 0px;
+            padding-bottom: 4px;
+            font-size: 10px;
+            color: #8e8e8e;
+          }
+
+          .comment-container {
+            padding: 0 16px;
+            height: 53px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid #efefef;
+            margin-top: 8px;
+
+            .add-comment {
+              width: 40px;
+              height: 80%;
+              background-color: transparent;
+              border: none;
+            }
+
+            .comment {
+              max-width: 517px;
+              width: 80%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
