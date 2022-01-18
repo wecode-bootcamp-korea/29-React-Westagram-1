@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Comment from './Comment';
 
 import {
   FiMoreHorizontal,
@@ -72,11 +73,7 @@ function Feed() {
       </article>
       <div className="feeds-minute">59분 전</div>
 
-      {commentList.map((comment, i) => (
-        <div key={i} className="comment-hidden">
-          <span className="bold"> vittoria.kark</span> {comment}
-        </div>
-      ))}
+      <Comment commentList={commentList} />
 
       <div className="comment-container">
         <input
@@ -85,7 +82,7 @@ function Feed() {
           placeholder="댓글 달기..."
           value={comment}
           onChange={handleChange}
-          onKeyDown={commentEnterUpload}
+          onKeyUp={commentEnterUpload}
         />
         <button className="add-comment" onClick={commentUpload}>
           게시
