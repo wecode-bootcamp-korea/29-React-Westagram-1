@@ -12,7 +12,7 @@ import { FiSend } from 'react-icons/fi';
 import User from './User';
 import Comments from './Comments';
 
-function Feed() {
+function Feed(props) {
   return (
     <div class="feed">
       <div class="feedUserBar">
@@ -25,11 +25,7 @@ function Feed() {
         <div class="feedMore">···</div>
       </div>
       <div class="feedImgWrapper">
-        <img
-          className="feedImg"
-          src="https://images.pexels.com/photos/4321505/pexels-photo-4321505.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-          alt=""
-        />
+        <img className="feedImg" src={props.feedImgUrl} alt="" />
       </div>
       <div class="feedBottom">
         <div class="feedLoves">
@@ -56,11 +52,7 @@ function Feed() {
         <div class="feedText">
           <div class="feedTextWrite">
             <a href="/">username</a>
-            <p>
-              Come on let's go to bed we gonna rock the night away who did that
-              to you, babe If you're not in the right mood to sleep now then,
-              Come on, let's drink and have very unmanageable day
-            </p>
+            <p>{props.feedContent}</p>
           </div>
         </div>
         <Comments />
