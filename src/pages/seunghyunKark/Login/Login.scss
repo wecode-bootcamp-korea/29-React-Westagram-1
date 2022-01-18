@@ -39,6 +39,7 @@ $border-style: 1px solid #dbdbdb;
       border: $border-style;
       background-color: #fff;
       border-radius: 3px;
+      margin: 0 0 10px 0;
 
       section {
         display: flex;
@@ -54,7 +55,7 @@ $border-style: 1px solid #dbdbdb;
       }
       section:nth-child(2) {
         flex-direction: column;
-        margin: 24px 0 24px 0;
+        margin: 24px 0 0 0;
 
         input {
           padding: 0 0 0 8px;
@@ -88,11 +89,56 @@ $border-style: 1px solid #dbdbdb;
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        .or {
+          margin: 10px 0 18px 0;
+        }
         .forgotPassword {
-          margin: 40px 0 40px 0;
+          margin: 40px 0 20px 0;
           font-size: 12px;
           color: #00376b;
           margin-top: 40px;
+        }
+      }
+    }
+    .footer {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      section:nth-child(1) {
+        border: $border-style;
+        background-color: #fff;
+        border-radius: 3px;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        span {
+          font-weight: bold;
+          color: #0095f6;
+          margin-left: 5px;
+        }
+      }
+      section:nth-child(2) {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        div:nth-child(1) {
+          display: flex;
+          justify-content: center;
+        }
+
+        .appbadgeContainer {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+
+          img {
+            width: 136px;
+          }
+          img:nth-child(1) {
+            padding-right: 7px;
+          }
         }
       }
     }

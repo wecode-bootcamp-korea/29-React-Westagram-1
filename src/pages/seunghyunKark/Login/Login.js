@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Login.scss';
 import { useNavigate } from 'react-router-dom';
+import { FaFacebookSquare } from 'react-icons/fa';
 
 function Login(props) {
   //useNavigate의 함수
@@ -31,11 +32,6 @@ function Login(props) {
   };
 
   const [opa, setOpa] = useState({ opacity: 0.5 });
-
-  //useEffect(() => {
-  //console.log(idValue);
-  //console.log(pwValue);
-  //});
 
   //렌더링 하는 곳
   return (
@@ -69,20 +65,33 @@ function Login(props) {
             />
           </section>
           <section>
-            <div>또는</div>
-            <div>headbook으로 로그인 하기</div>
+            <div>
+              <div className="or">또는</div>
+            </div>
+
+            <div>
+              <FaFacebookSquare />
+              headbook으로 로그인 하기
+            </div>
             <div className="forgotPassword">비밀번호를 잊으셨나요?</div>
           </section>
         </div>
-        <div>
+        <div className="footer">
           <section>
             계정이 없으신가요?
-            <button>가입하기</button>
+            <span>가입하기</span>
           </section>
           <section>
-            앱을 다운로드 하세요
-            <div>
-              <img />
+            <div>앱을 다운로드 하세요</div>
+            <div className="appbadgeContainer">
+              <img
+                src="/images/seunghyunKark/Appstore1.png"
+                alt="Appstore Badge"
+              />
+              <img
+                src="/images/seunghyunKark/Appstore2.png"
+                alt="Appstore Badge"
+              />
             </div>
           </section>
         </div>

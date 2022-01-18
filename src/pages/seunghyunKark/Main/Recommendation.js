@@ -1,5 +1,6 @@
 import React from 'react';
 import { recInfo } from './recInfo';
+import './Recommendation.scss';
 
 function Recommendation(props) {
   return (
