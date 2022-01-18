@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-
-import './Login.scss';
-
 import LoginForm from './LoginForm.js';
+import './Login.scss';
 
 function Login() {
   const [idInput, setIdInput] = useState('');
