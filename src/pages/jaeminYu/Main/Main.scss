@@ -341,6 +341,16 @@ $urlCommon: '../../../../public/images/common/';
   opacity: 0.3;
 }
 
+.postingBtnActive {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.postingBtnInActive {
+  opacity: 0.3;
+  cursor: default;
+}
+
 .main-right {
   max-width: 293px;
   width: 100%;

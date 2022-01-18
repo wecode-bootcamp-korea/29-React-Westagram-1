@@ -8,8 +8,45 @@ import {
   FaBookmark,
   FaSmile,
 } from 'react-icons/fa';
+import { useState } from 'react';
+import Comment from './Comment';
 
 export const Main = () => {
+  const [userComment, setUserComment] = useState('');
+  const [postBtn, setPostBtn] = useState('postingBtnInActive');
+  const [listElement, setListElement] = useState([]); // Event 3-1 : 댓글 추가 내용을 담기 위한 빈 배열 생성
+
+  // Event 1 : input에 입력 되는 값 저장
+  const CommnetLength = event => {
+    setUserComment(event.target.value);
+  };
+
+  // Event 2 : input 입력 값이 0 을 초과하는 경우 버튼 활성화
+  const CommnetBtnHandler = () => {
+    userComment.length > 0
+      ? setPostBtn('postingBtnActive')
+      : setPostBtn('postingBtnInActive');
+  };
+
+  // Event 3 : 댓글 추가 (게시 글을 클릭하는 경우)
+  function UploadComment() {
+    if (userComment.length > 0) {
+      const newComment = {
+        id: '',
+        nickname: 'raccoons',
+        description: userComment,
+      };
+      // Event 3-2 : 스프레드 문법으로 기존 배열(listElement)을 유지하며 newComment 객체 추가
+      setListElement([...listElement, newComment]);
+      setUserComment('');
+    }
+  }
+
+  // Event 4 : 댓글 추가 (엔터를 누를 경우)
+  const CommentEnter = event => {
+    if (event.key === 'Enter' && userComment.length > 0) UploadComment();
+  };
+
   return (
     <div>
       <Nav />
@@ -97,26 +134,18 @@ export const Main = () => {
             </div>
             <div className="article-comment-record">
               <p className="comment-btn">
-                댓글&nbsp;<span className="comment-counting">2</span>개 모두
+                댓글&nbsp;<span className="comment-counting">0</span>개 모두
                 보기
               </p>
               <ul className="comment-list">
-                <li className="comment-list-add">
-                  <a href="#" className="comment-user">
-                    tiger
-                  </a>
-                  <span className="user-comment">부럽다 ㅎㅎ</span>
-                  <span className="icon-mini-heart"></span>
-                  <span className="delete-btn">X</span>
-                </li>
-                <li className="comment-list-add">
-                  <a href="#" className="comment-user">
-                    white-bear
-                  </a>
-                  <span className="user-comment">다음에 또 놀러와</span>
-                  <span className="icon-mini-heart"></span>
-                  <span className="delete-btn">X</span>
-                </li>
+                {/* Event 3-3 : 업데이트 된 listElement 배열을 map으로 돌린다. (Comment 자식 컴포넌트에 props 전달하여 내용 바꾸기) */}
+                {listElement.map((el, index) => (
+                  <Comment
+                    key={index}
+                    nickname={el.nickname}
+                    description={el.description}
+                  />
+                ))}
               </ul>
               <p className="comment_time">1일 전</p>
             </div>
@@ -128,8 +157,17 @@ export const Main = () => {
                 type="text"
                 placeholder="댓글 달기..."
                 className="posting-area"
+                onChange={CommnetLength}
+                onKeyUp={CommnetBtnHandler}
+                value={userComment}
+                onKeyPress={CommentEnter}
               />
-              <button type="button" className="posting-button">
+              {/* Event 3-4 : input태그에 value 속성값에 userComment를 넣어주어 초기화 값을 적용시킨다. */}
+              <button
+                type="button"
+                className={'posting-button' + ' ' + postBtn}
+                onClick={UploadComment}
+              >
                 게시
               </button>
             </div>
