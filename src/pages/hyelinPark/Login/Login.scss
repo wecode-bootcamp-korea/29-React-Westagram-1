@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.Login {
+  height: 100vh;
+
+  .loginBox {
+    border: 1px solid rgb(232, 231, 231);
+    width: 400px;
+    height: 480px;
+    text-align: center;
+    margin: 0 auto;
+
+    .logo {
+      font-size: 40px;
+      font-weight: bold;
+      font-family: 'Lobster', cursive;
+    }
+    .inputBox {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 60px;
+
+      input {
+        width: 18rem;
+        margin-bottom: 6px;
+        padding: 10px;
+        border: 1px solid rgb(232, 231, 231);
+        border-radius: 3px;
+        background-color: rgb(245, 244, 244);
+        font-size: 12px;
+
+        &:focus {
+          outline: none;
+
+          &::placeholder {
+            color: rgb(133, 131, 131);
+          }
+        }
+      }
+
+      button {
+        width: 78%;
+        padding: 6px;
+        border: none;
+        border-radius: 3px;
+        background-color: rgba(46, 88, 147);
+        margin-top: 10px;
+        padding: 7px;
+        color: white;
+
+        &:disabled {
+          background-color: rgba(46, 88, 147, 0.38);
+        }
+      }
+    }
+    .or {
+      display: flex;
+      flex-basis: 100%;
+      font-size: 13px;
+      color: rgb(159, 158, 158);
+      font-weight: bold;
+      margin: 20px 27px;
+
+      &::before {
+        content: '';
+        flex-grow: 1;
+        background-color: rgb(159, 158, 158);
+        height: 1px;
+        font-size: 0px;
+        margin: 7px 16px;
+      }
+
+      &::after {
+        content: '';
+        flex-grow: 1;
+        background-color: rgb(159, 158, 158);
+        height: 1px;
+        font-size: 0px;
+        margin: 7px 16px;
+      }
+    }
+    .facebook {
+      display: block;
+      margin: 40px 0 20px 0;
+      color: rgb(47, 47, 179);
+      font-weight: bold;
+      text-decoration-line: none;
+    }
+    .forgetPassword {
+      display: block;
+      font-size: 13px;
+      color: rgb(159, 158, 158);
+      text-decoration-line: none;
+    }
+  }
+}
