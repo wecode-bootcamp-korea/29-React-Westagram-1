@@ -3,11 +3,12 @@
     .main-container {
       .feeds {
         width: 614px;
-        margin: 0 28px 0 0;
+        margin-right: 28px;
 
         section {
           border: 1px solid #dbdbdb;
           border-radius: 3px;
+          margin-bottom: 24px;
 
           .feeds-like,
           .interaction-bar,

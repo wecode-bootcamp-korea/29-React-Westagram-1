@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "userHandle": "alice.rossi ",
+    "userName": "Alice Rossi",
+    "profileSrc": "/images/seunghyunKark/profile7.jpg",
+    "src": "/images/seunghyunKark/feed1.JPG",
+    "content": "I found this great cafe in Gangneung.",
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "wecode",
+        "content": "Welcome to world best coding bootcamp!",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "joonsikyang",
+        "content": "Hi there.",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "jayPark",
+        "content": "Hey.",
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "userHandle": "TrentaSignori ",
+    "userName": "Song Park",
+    "profileSrc": "/images/seunghyunKark/profile4.jpeg",
+    "src": "/images/seunghyunKark/feed2.JPG",
+    "content": "My yummy thing",
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "crutches",
+        "content": "Hi!",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "hanseokbong",
+        "content": "I write sick types.",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "Tadatata",
+        "content": "Ci saranno persone senza tete.",
+        "isLiked": false
+      }
+    ]
+  }
+]

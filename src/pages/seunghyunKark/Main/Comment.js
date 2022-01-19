@@ -1,13 +1,13 @@
 import React from 'react';
 import './Comment.scss';
 
-function Comment({ commentList }) {
+function Comment({ comments }) {
   return (
     <ul className="comment-hidden">
-      {commentList.map(comment => (
-        <li key={comment.id} className="comment-hidden">
-          <span className="comment-id"> {comment.userName}</span>
-          {comment.content}
+      {comments.map(comments => (
+        <li key={comments.id} className="comment-hidden">
+          <span className="comment-id"> {comments.userName}</span>
+          {comments.content}
         </li>
       ))}
     </ul>
