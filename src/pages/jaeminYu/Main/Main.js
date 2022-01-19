@@ -54,7 +54,6 @@ export const Main = () => {
               description={el.description}
               freindThumbnail={el.freindThumbnail}
               freindId={el.freindId}
-              likeCount={el.likeCount}
             />
           ))}
         </div>

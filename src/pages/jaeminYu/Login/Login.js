@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Login/Login.scss';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export const Login = () => {
   const [idInputValue, setIdInputValue] = useState('');

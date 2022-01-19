@@ -9,10 +9,16 @@ import {
 import Comment from './Comment';
 import { useState, useEffect } from 'react';
 
+let comment_id = 1;
+
 const Feed = props => {
   const [userComment, setUserComment] = useState('');
   const [postBtn, setPostBtn] = useState('postingBtnInActive');
   const [listElement, setListElement] = useState([]); // Event 3-1 : 댓글 추가 내용을 담기 위한 빈 배열 생성
+  const [moreBtn, setMoreBtn] = useState('desc-txt-hide');
+  const [likeBtn, setLikeBtn] = useState(0);
+  const [commnetCount, setCommnetCount] = useState(0);
+  const [commentMore, setCommentMore] = useState(''); // 추가 기능 : 댓글 더보기 기능
 
   useEffect(() => {
     fetch('http://localhost:3000/data/commentList.json', { method: 'GET' })
@@ -38,7 +44,7 @@ const Feed = props => {
   function UploadComment() {
     if (userComment.length > 0) {
       const newComment = {
-        id: '',
+        id: comment_id,
         nickname: 'raccoons',
         location: '',
         miniThumbnail: '',
@@ -48,12 +54,32 @@ const Feed = props => {
       // Event 3-2 : 스프레드 문법으로 기존 배열(...listElement)을 유지하며 newComment 객체 추가
       setListElement([...listElement, newComment]);
       setUserComment('');
+      // 추가 기능 : 댓글 갯수 카운트
+      setCommnetCount(commnetCount + 1);
+      comment_id += 1;
     }
+  }
+
+  // Error : 삭제 기능 구현 안됨...ㅠㅠ
+  function deleteHandler() {
+    listElement.filter(el => console.log(el.id));
   }
 
   // Event 4 : 댓글 추가 (엔터를 누를 경우)
   const CommentEnter = event => {
     if (event.key === 'Enter' && userComment.length > 0) UploadComment();
+  };
+
+  // 추가 기능 : 더보기 버튼 클릭
+  const moreBtnHandler = event => {
+    setMoreBtn('desc-txt-show');
+    event.target.style.display = 'none';
+  };
+
+  // 추가 기능 : 좋아요 버튼 클릭
+  const likeBtnHandler = event => {
+    event.preventDefault();
+    setLikeBtn(likeBtn + 1);
   };
 
   return (
@@ -74,7 +100,7 @@ const Feed = props => {
         </div>
         <div className="article-icon-wrap">
           <a href="#" className="icon icon-heart">
-            <FaHeart className="far fa-heart" />
+            <FaHeart className="far fa-heart" onClick={likeBtnHandler} />
           </a>
           <a href="#" className="icon icon-comment">
             <FaComment className="far fa-comment" />
@@ -91,20 +117,24 @@ const Feed = props => {
           <p>
             <span className="like-user">{props.freindId}</span>님{' '}
             <span className="like-total">
-              외 <span className="like-counting">{props.likeCount}</span>명
+              외 <span className="like-counting">{likeBtn}</span>명
             </span>
             이 좋아합니다
           </p>
         </div>
         <div className="article-description">
           <div className="desc-header">
-            <p className="desc-txt">
+            <p className={moreBtn}>
               <a href="#" className="desc-user">
                 {props.nickname}
               </a>
               {props.description}
             </p>
-            <button type="button" className="desc-more-btn">
+            <button
+              type="button"
+              className="desc-more-btn"
+              onClick={moreBtnHandler}
+            >
               더 보기
             </button>
           </div>
@@ -116,16 +146,22 @@ const Feed = props => {
           </ul>
         </div>
         <div className="article-comment-record">
-          <p className="comment-btn">
-            댓글&nbsp;<span className="comment-counting">0</span>개 모두 보기
+          <p
+            className="comment-btn"
+            onClick={() => setCommentMore('comment-list-more')}
+          >
+            댓글&nbsp;<span className="comment-counting">{commnetCount}</span>개
+            모두 보기
           </p>
-          <ul className="comment-list">
+          <ul className={'comment-list' + ' ' + commentMore}>
             {/* Event 3-3 : 업데이트 된 listElement 배열을 map으로 돌린다. (Comment 자식 컴포넌트에 props 전달하여 내용 바꾸기) */}
             {listElement.map((el, index) => (
               <Comment
                 key={index}
+                id={el.id}
                 nickname={el.nickname}
                 description={el.description}
+                deleteHandler={deleteHandler}
               />
             ))}
           </ul>
