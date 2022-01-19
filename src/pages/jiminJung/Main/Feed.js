@@ -51,7 +51,7 @@ function Feed(props) {
         </div>
         <div class="feedText">
           <div class="feedTextWrite">
-            <a href="/">username</a>
+            <a href="/">{props.feedUserName}</a>
             <p>{props.feedContent}</p>
           </div>
         </div>

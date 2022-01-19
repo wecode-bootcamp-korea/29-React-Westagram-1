@@ -21,7 +21,13 @@ function MainLeft() {
     <div className="mainLeft">
       <div class="feeds">
         {feeds.map(x => {
-          return <Feed feedImgUrl={x.feedImgUrl} feedContnet={x.feedContnet} />;
+          return (
+            <Feed
+              feedImgUrl={x.feedImgUrl}
+              feedUserName={x.feedUserName}
+              feedContent={x.feedContent}
+            />
+          );
         })}
       </div>
     </div>

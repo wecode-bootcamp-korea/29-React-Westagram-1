@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import './Comments.scss';
 import Comment from './Comment';
 import PostedComments from './PostedComments';
 
@@ -7,6 +7,7 @@ function Comments() {
   const [comment, setComment] = useState('');
   const [postedList, setPostedList] = useState([]);
   const [commentList, setCommentList] = useState([]);
+
   const handleComment = e => {
     setComment(e.target.value);
   };
