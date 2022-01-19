@@ -1,9 +1,22 @@
 import React, { useState, useEffect } from 'react';
 
 import Comment from './Comment';
+import PostedComments from './PostedComments';
 
 function Comments() {
+  const [comment, setComment] = useState('');
+  const [postedList, setPostedList] = useState([]);
   const [commentList, setCommentList] = useState([]);
+  const handleComment = e => {
+    setComment(e.target.value);
+  };
+  const addComment = c => {
+    setCommentList(commentList => [...commentList, c]);
+  };
+  const registerComment = () => {
+    addComment(comment);
+    setComment('');
+  };
 
   useEffect(() => {
     fetch('http://localhost:3000/dataJimn/commentData.json', {
@@ -11,20 +24,27 @@ function Comments() {
     })
       .then(res => res.json())
       .then(data => {
-        setCommentList(data);
+        setPostedList(data);
       });
   }, []);
 
   return (
     <>
       <ul>
-        {commentList.map(x => {
-          return <Comment userName={x.userName} content={x.content} />;
+        {postedList.map(x => {
+          return <PostedComments userName={x.userName} content={x.content} />;
         })}
+        <Comment commentList={commentList} />
       </ul>
       <div className="writeComment">
-        <input type="text" placeholder="댓글 달기..." />
-        <button className="commentBtn">게시</button>
+        <input
+          type="text"
+          placeholder="댓글 달기..."
+          onChange={handleComment}
+        />
+        <button className="commentBtn" onClick={registerComment}>
+          게시
+        </button>
       </div>
     </>
   );

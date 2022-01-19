@@ -1,31 +1,20 @@
 import React from 'react';
-
-import './LoginForm.scss';
 import { Link } from 'react-router-dom';
+import './LoginForm.scss';
 
-function LoginForm({
-  valueId,
-  onChangeId,
-  onKeyUpId,
-  valuePw,
-  onChangePw,
-  onKeyUpPw,
-  disabled,
-}) {
+function LoginForm({ onChangeId, onKeyUpId, onChangePw, onKeyUpPw, disabled }) {
   return (
     <div className="loginForm">
       <input
-        value={valueId}
         onChange={onChangeId}
         onKeyUp={onKeyUpId}
         type="text"
         placeholder="전화번호, 사용자 이름 또는 이메일"
       />
       <input
-        value={valuePw}
         onChange={onChangePw}
         onKeyUp={onKeyUpPw}
-        type="text"
+        type="password"
         placeholder="비밀번호"
       />
       <Link to="/main-jiminJung">
