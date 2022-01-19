@@ -16,6 +16,17 @@ function Login(props) {
       ? alert('PW는 8글자 이상이어야 합니다')
       : alert('ID에는 @가 포함되어야 하며, PW는 8글자 이상이어야 합니다');
   };
+  const validation = () => {
+    fetch('http://10.58.2.189:8000/login/', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: idValue,
+        password: pwValue,
+      }),
+    })
+      .then(res => res.json())
+      .then(res => console.log('결과: ', res));
+  };
 
   //state 로그인
   const [idValue, setIdValue] = useState('');
@@ -56,13 +67,9 @@ function Login(props) {
               value={pwValue}
               onChange={handlePwInput}
             />
-            <input
-              className="submit"
-              type="submit"
-              value="로그인"
-              style={opa}
-              onClick={goToMain}
-            />
+            <button className="submit" style={opa} onClick={validation}>
+              로그인
+            </button>
           </section>
           <section>
             <div>

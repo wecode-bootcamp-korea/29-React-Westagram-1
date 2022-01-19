@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Comment from './Comment';
 import './Feed.scss';
 
@@ -14,7 +14,7 @@ function Feed() {
   const [comment, setComment] = useState('');
   const handleChange = ({ target }) => setComment(target.value);
 
-  const [commentList, setCommentList] = useState([]); // immutable
+  const [commentList, setCommentList] = useState([]);
   const addComment = event =>
     setCommentList(commentList => [...commentList, event]);
 
@@ -28,11 +28,6 @@ function Feed() {
       setComment('');
     }
   };
-
-  useEffect(() => {
-    //console.log(comment);
-    //console.log(commentList);
-  });
 
   return (
     <section className="feed-section">
