@@ -18,7 +18,10 @@ const Comment = props => {
             : setCommentLikeBtn('icon-mini-heart')
         }
       ></span>
-      <span className="delete-btn" onClick={props.deleteHandler}>
+      <span
+        className="delete-btn"
+        onClick={() => props.DeleteComment(props.id)}
+      >
         X
       </span>
     </li>

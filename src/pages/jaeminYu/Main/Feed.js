@@ -60,9 +60,10 @@ const Feed = props => {
     }
   }
 
-  // Error : 삭제 기능 구현 안됨...ㅠㅠ
-  function deleteHandler() {
-    listElement.filter(el => console.log(el.id));
+  // 추가 기능 : 댓글 삭제 (X버튼 클릭 할 경우)
+  function DeleteComment(listId) {
+    setListElement(listElement.filter(el => el.id !== listId));
+    setCommnetCount(commnetCount - 1);
   }
 
   // Event 4 : 댓글 추가 (엔터를 누를 경우)
@@ -161,7 +162,7 @@ const Feed = props => {
                 id={el.id}
                 nickname={el.nickname}
                 description={el.description}
-                deleteHandler={deleteHandler}
+                DeleteComment={DeleteComment}
               />
             ))}
           </ul>
