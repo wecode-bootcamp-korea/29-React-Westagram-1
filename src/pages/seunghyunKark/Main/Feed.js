@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Comment from './Comment';
 import './Feed.scss';
 
@@ -28,6 +28,16 @@ function Feed() {
       setComment('');
     }
   };
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/seunghyunKark/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setCommentList(data);
+      });
+  }, []);
 
   return (
     <section className="feed-section">
