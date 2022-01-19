@@ -1,4 +1,6 @@
 import React from 'react';
+import User from './User';
+import Comments from './Comments';
 import './Feed.scss';
 
 import {
@@ -9,10 +11,7 @@ import {
 } from 'react-icons/fa';
 import { FiSend } from 'react-icons/fi';
 
-import User from './User';
-import Comments from './Comments';
-
-function Feed(props) {
+function Feed({ feedImgUrl, feedUserName, feedContent }) {
   return (
     <div class="feed">
       <div class="feedUserBar">
@@ -25,7 +24,7 @@ function Feed(props) {
         <div class="feedMore">···</div>
       </div>
       <div class="feedImgWrapper">
-        <img className="feedImg" src={props.feedImgUrl} alt="" />
+        <img className="feedImg" src={feedImgUrl} alt="" />
       </div>
       <div class="feedBottom">
         <div class="feedLoves">
@@ -51,8 +50,8 @@ function Feed(props) {
         </div>
         <div class="feedText">
           <div class="feedTextWrite">
-            <a href="/">{props.feedUserName}</a>
-            <p>{props.feedContent}</p>
+            <a href="/">{feedUserName}</a>
+            <p>{feedContent}</p>
           </div>
         </div>
         <Comments />

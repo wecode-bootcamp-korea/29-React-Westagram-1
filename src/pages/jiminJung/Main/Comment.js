@@ -1,14 +1,17 @@
 import React from 'react';
-
+import './Comment.scss';
 import { FaRegHeart } from 'react-icons/fa';
 
 function Comment({ commentList }) {
   return (
     <>
       {commentList.map(comment => (
-        <li key={comment.index}>
-          <a>userName</a>
-          {comment}
+        <li className="newComment" key={comment.index}>
+          <div className="newCommentText">
+            <a href="/">userName</a>
+            <span>{comment}</span>
+          </div>
+          <FaRegHeart className="commentHeart" size="15px" />
         </li>
       ))}
     </>

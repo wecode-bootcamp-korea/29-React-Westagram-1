@@ -2,12 +2,12 @@ import React from 'react';
 import './PostedComment.scss';
 import { FaRegHeart } from 'react-icons/fa';
 
-function PostedComments(props) {
+function PostedComments({ userName, content }) {
   return (
     <li className="postedComment">
       <div className="commentText">
-        <a href=""> {props.userName} </a>
-        <span> {props.content} </span>
+        <a href="/"> {userName} </a>
+        <span> {content} </span>
       </div>
       <FaRegHeart className="commentHeart" size="15px" />
     </li>

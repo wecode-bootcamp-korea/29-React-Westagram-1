@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from 'react';
-
-import './MainLeft.scss';
-
 import Feed from './Feed';
-
+import './MainLeft.scss';
 function MainLeft() {
   const [feeds, setFeeds] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/dataJimn/feedData.json', {
-      method: 'GET',
-    })
+    fetch('http://localhost:3000/dataJimn/feedData.json')
       .then(res => res.json())
       .then(data => {
         setFeeds(data);

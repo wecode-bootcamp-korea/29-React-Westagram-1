@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './Comments.scss';
-import Comment from './Comment';
 import PostedComments from './PostedComments';
+import Comment from './Comment';
+import './Comments.scss';
 
 function Comments() {
   const [comment, setComment] = useState('');
@@ -20,9 +20,7 @@ function Comments() {
   };
 
   useEffect(() => {
-    fetch('http://localhost:3000/dataJimn/commentData.json', {
-      method: 'GET',
-    })
+    fetch('http://localhost:3000/dataJimn/commentData.json')
       .then(res => res.json())
       .then(data => {
         setPostedList(data);
