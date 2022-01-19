@@ -1,21 +1,12 @@
 import React, { useState } from 'react';
 import './Login.scss';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { FaFacebookSquare } from 'react-icons/fa';
 
 function Login(props) {
   //useNavigate의 함수
   const navigate = useNavigate();
 
-  const goToMain = () => {
-    return idValue.includes('@') && pwValue.length > 7
-      ? navigate('/main-seunghyunKark')
-      : !idValue.includes('@') && pwValue.length > 7
-      ? alert('ID에는 @가 포함되어야 합니다')
-      : idValue.includes('@') && pwValue.length < 8
-      ? alert('PW는 8글자 이상이어야 합니다')
-      : alert('ID에는 @가 포함되어야 하며, PW는 8글자 이상이어야 합니다');
-  };
   const validation = () => {
     fetch('http://10.58.2.189:8000/login/', {
       method: 'POST',
@@ -25,7 +16,15 @@ function Login(props) {
       }),
     })
       .then(res => res.json())
-      .then(res => console.log('결과: ', res));
+      .then(res => {
+        if (res.message === 'INVALID_EMAIL') {
+          alert('존재하지 않는 아이디입니다.');
+        } else if (res.message === 'INVALID_PASSWORD') {
+          alert('비밀번호가 틀렸습니다.');
+        } else {
+          navigate('/main-seunghyunKark');
+        }
+      });
   };
 
   //state 로그인
