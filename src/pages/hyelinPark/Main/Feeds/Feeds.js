@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import NewComment from './NewComment/NewComment';
+import NewComment from '/Users/hyelinpark/Desktop/vvv/29-React-Westagram-1/src/pages/hyelinPark/Main/Feeds/NewComment/NewComment.js';
 
-const Feeds = props => {
+const Feeds = ({ commenttest, userName, feedImg, feedContent, userImg }) => {
   const [isValied, setIsValied] = useState('false');
   //input 값의 유효성 검사
 
   const [comment, setComment] = useState('');
   //input 값
-  const [commentArray, setCommentArray] = useState([]);
+  const [commentArray, setCommentArray] = useState(commenttest);
   //댓글 배열을 저장
 
   const handleOnChange = e => {
@@ -19,7 +19,10 @@ const Feeds = props => {
     if (comment === '') {
       return;
     }
-    setCommentArray([...commentArray, comment]);
+    setCommentArray([
+      ...commentArray,
+      { userName: 'test1', comment: comment, id: Math.random(), isLiked: true },
+    ]);
     setComment('');
   };
 
@@ -27,19 +30,11 @@ const Feeds = props => {
     <>
       <div className="feeds">
         <div className="user">
-          <img
-            src="/images/hyelinPark/1.jpeg"
-            alt="myprofile_photo"
-            className="myprofilePhoto"
-          />
-          <span className="userId">parkhyeluin</span>
+          <img src={userImg} alt="myprofile_photo" className="myprofilePhoto" />
+          <span className="userId">{userName}</span>
         </div>
         <article className="photobox">
-          <img
-            src="/images/hyelinPark/9.jpeg"
-            alt="feed_photo"
-            className="feedPhoto"
-          />
+          <img src={feedImg} alt="feed_photo" className="feedPhoto" />
           <div className="photoIcon">
             <span id="heart">
               <i className="fa fa-heart-o"></i>
@@ -66,9 +61,9 @@ const Feeds = props => {
               좋아합니다
             </div>
             <span className="first" style={{ fontWeight: 'bold' }}>
-              parkhyeluin
+              {userName}
             </span>
-            <span className="second">🇫🇷 IN PARIS</span>
+            <span className="second">{feedContent}</span>
             <span className="add">더 보기</span>
             <div className="time">54분 전</div>
             <ul>

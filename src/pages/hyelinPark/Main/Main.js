@@ -1,9 +1,21 @@
-// import Nav from '../../../components/Nav/Nav';
-import React from 'react';
-import Feeds from './Feeds/Feeds';
+import React, { useState, useEffect } from 'react';
 import './Main.scss';
+import Feeds from '/Users/hyelinpark/Desktop/vvv/29-React-Westagram-1/src/pages/hyelinPark/Main/Feeds/Feeds.js';
+import MainRight from './MainRight/MainRight';
 
 const Main = () => {
+  const [feedList, setFeedList] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3001/data/hyelinPark/feedData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setFeedList(data);
+      });
+  }, []);
+
   return (
     <div className="Main">
       <nav>
@@ -39,9 +51,22 @@ const Main = () => {
 
       <main>
         <div className="mainWrap">
-          <Feeds />
-
-          <div className="main_right">
+          <div className="feedList">
+            {feedList.map(feed => {
+              return (
+                <Feeds
+                  key={feed.id}
+                  userName={feed.userName}
+                  userImg={feed.userImg}
+                  feedImg={feed.feedImg}
+                  feedContent={feed.feedContent}
+                  commenttest={feed.comment}
+                />
+              );
+            })}
+          </div>
+          <MainRight />
+          {/* <div className="main_right">
             <div className="user_2">
               <img
                 src="/images/hyelinPark/1.jpeg"
@@ -132,7 +157,7 @@ const Main = () => {
               </p>
               <div className="date">© 2022 WESTAGRAM</div>
             </div>
-          </div>
+          </div> */}
         </div>
       </main>
     </div>

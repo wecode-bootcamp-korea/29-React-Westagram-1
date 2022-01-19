@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "userName": "parkhyeluin",
+    "userImg": "/images/hyelinPark/1.jpeg",
+    "feedImg": "/images/hyelinPark/feed_photo.jpeg",
+    "feedContent": "In Paris 🇫🇷",
+    "comment": [
+      {
+        "id": 1,
+        "userName": "jinxsik",
+        "comment": "나도 데려가",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "trooioi",
+        "comment": "미췬 ,,,",
+        "isLiked": true
+      },
+      {
+        "id": 3,
+        "userName": "yerimyyy",
+        "comment": "코로나 조심하셈..ㅠㅠㅋ",
+        "isLiked": false
+      },
+      {
+        "id": 4,
+        "userName": "seul_ha",
+        "comment": "이시국에.. 노답",
+        "isLiked": true
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "userName": "trooioi",
+    "userImg": "/images/hyelinPark/16.jpeg",
+    "feedImg": "/images/hyelinPark/20.jpeg",
+    "feedContent": "제주 조하.. 🥰",
+    "comment": [
+      {
+        "id": 1,
+        "userName": "jinxsik",
+        "comment": "나도 데려가",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "parkhyeluin",
+        "comment": "존못",
+        "isLiked": true
+      },
+      {
+        "id": 3,
+        "userName": "yerimyyy",
+        "comment": "공주..",
+        "isLiked": false
+      },
+      {
+        "id": 4,
+        "userName": "seul_ha",
+        "comment": "그럼 제주도로 돌아가",
+        "isLiked": true
+      }
+    ]
+  }
+]
