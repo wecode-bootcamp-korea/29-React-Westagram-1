@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Login/Login.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export const Login = () => {
   const [idInputValue, setIdInputValue] = useState('');
@@ -29,6 +29,28 @@ export const Login = () => {
     idInputValue.includes('@') && pwInputValue.length > 4
       ? setLoginBtn('btnActive')
       : setLoginBtn('btnInActive');
+  };
+
+  const FetchHandler = () => {
+    fetch('http://10.58.3.67:8000/users/signup', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: idInputValue,
+        password: pwInputValue,
+      }),
+    })
+      .then(res => res.json())
+      .then(result => {
+        console.log(result);
+        if (
+          result.message === 'USER_ALREADY_EXIST' ||
+          result.message === 'INVALID_FORMAT'
+        ) {
+          alert('아이디와 비밀번호를 확인해주세요.');
+        } else if (result.message === 'SUCCESS') {
+          goToHome();
+        }
+      });
   };
 
   return (
@@ -71,21 +93,19 @@ export const Login = () => {
               <div id="logo" className="img-sprite"></div>
               <div id="input-wrap">
                 <label className="user-loing-txt">
-                  <span className="action-txt id-action-txt">
-                    전화번호, 사용자 이름 또는 이메일
-                  </span>
                   <input
                     id="inputId"
                     type="text"
+                    placeholder="전화번호, 사용자 이름 또는 이메일"
                     className={'write-box id-write-box'}
                     onChange={IdInputHandler}
                     onKeyUp={LoginBtnHandler}
                   />
                 </label>
                 <label className="user-loing-txt">
-                  <span className="action-txt pw-action-txt">비밀번호</span>
                   <input
                     id="inputPw"
+                    placeholder="비밀번호"
                     type="password"
                     className="write-box pw-write-box"
                     onChange={PwInputHandler}
@@ -96,11 +116,10 @@ export const Login = () => {
                   <button
                     id="login-btn"
                     className={loginBtn}
-                    onClick={goToHome}
+                    onClick={FetchHandler}
                   >
                     로그인
                   </button>
-                  {/* <Link to="/home" id="login-btn">로그인</Link> */}
                 </label>
               </div>
             </div>
