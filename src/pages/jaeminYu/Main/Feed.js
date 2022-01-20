@@ -1,4 +1,7 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
+
+import Comment from './Comment';
 import {
   FaHeart,
   FaComment,
@@ -6,8 +9,6 @@ import {
   FaBookmark,
   FaSmile,
 } from 'react-icons/fa';
-import Comment from './Comment';
-import { useState, useEffect } from 'react';
 
 let comment_id = 1;
 
@@ -21,7 +22,7 @@ const Feed = props => {
   const [commentMore, setCommentMore] = useState(''); // 추가 기능 : 댓글 더보기 기능
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/commentList.json', { method: 'GET' })
+    fetch('/data/commentList.json', { method: 'GET' })
       .then(res => res.json())
       .then(data => {
         setListElement(data);

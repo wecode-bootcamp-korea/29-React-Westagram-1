@@ -1,14 +1,16 @@
-import Nav from '../../../components/Nav/Nav';
 import React from 'react';
-import '../Main/Main.scss';
 import { useState, useEffect } from 'react';
+
+import Nav from '../../../components/Nav/Nav';
 import Feed from './Feed';
+
+import '../Main/Main.scss';
 
 export const Main = () => {
   const [feedData, setFeedData] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/feedList.json', { method: 'GET' })
+    fetch('/data/feedList.json', { method: 'GET' })
       .then(res => res.json())
       .then(data => {
         setFeedData([...data]);

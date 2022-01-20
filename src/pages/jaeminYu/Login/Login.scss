@@ -1,9 +1,4 @@
-$font-small: 12px;
-$font-medium: 13px;
-$font-large: 14px;
-$font-bold: 600;
-$urlJaemin: '../../../../public/images/jaeminYu/';
-$urlCommon: '../../../../public/images/common/';
+@import '/src/styles/variables.scss';
 
 @mixin elementSize($width, $height) {
   width: $width;
@@ -56,7 +51,7 @@ $urlCommon: '../../../../public/images/common/';
           visibility: hidden;
         }
 
-        .phone-img-root {
+        .phone-img:first-child {
           visibility: visible;
           z-index: 2;
         }
@@ -133,24 +128,13 @@ $urlCommon: '../../../../public/images/common/';
               font-size: $font-large;
               line-height: 30px;
               font-weight: $font-bold;
-            }
-
-            #login-btn:hover {
-              opacity: 0.5;
-              background: #0095f6;
-              border: none;
-            }
-
-            .btnActive {
               opacity: 1;
               cursor: pointer;
-              pointer-events: auto;
             }
 
-            .btnInActive {
+            #login-btn:disabled {
               opacity: 0.5;
-              cursor: default;
-              pointer-events: none;
+              cursor: inherit;
             }
           }
 
