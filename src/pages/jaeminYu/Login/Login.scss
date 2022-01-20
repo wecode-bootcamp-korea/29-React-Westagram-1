@@ -16,7 +16,7 @@
   justify-content: $justifyContent;
 }
 
-#LoginMain {
+.LoginMain {
   @include elementPosition(flex, row, center);
   margin: 90px auto 0;
   max-width: 935px;
@@ -26,7 +26,7 @@
   font-size: $font-small;
 
   /* 좌측 phone */
-  #aside {
+  .aside {
     flex-basis: 454px;
     height: 618px;
     background: url($urlJaemin + 'login_mockup.png');
@@ -35,11 +35,11 @@
     margin-right: -17px;
     margin-top: -60px;
 
-    #phone-wrap {
+    .phone-wrap {
       margin: 100px 0 0 152px;
       position: relative;
 
-      #img-wrap {
+      .img-wrap {
         @include elementSize(240px, 427px);
         position: relative;
 
@@ -61,27 +61,27 @@
 
   /* [Mission] 추가 구현 사항 - Mission 9 | 반응형 구현 */
   @media screen and (max-width: 1000px) {
-    #aside {
+    .aside {
       display: none;
     }
   }
 
   /* 우측 login */
-  #section {
+  .login-input-section {
     @include elementSize(350px, 618px);
 
-    #login-wrap {
+    .login-wrap {
       background: #fff;
       border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
       padding: 10px 0;
       margin-bottom: 10px;
 
-      #login-box {
+      .login-box {
         display: flex;
         flex-flow: column;
         align-items: center;
 
-        #logo {
+        .insta-logo {
           @include elementSize(175px, 51px);
           background-position: 0 -129px;
           margin: 22px auto 12px;
@@ -93,7 +93,7 @@
           background-position: 0 -129px;
         }
 
-        #input-wrap {
+        .input-wrap {
           display: flex;
           flex-direction: column;
           position: relative;
@@ -113,7 +113,7 @@
               background: #fafafa;
             }
 
-            #login-btn {
+            .login-btn {
               @include elementSize(100%, 100%);
               overflow: hidden;
               font-size: $font-small;
@@ -132,7 +132,7 @@
               cursor: pointer;
             }
 
-            #login-btn:disabled {
+            .login-btn:disabled {
               opacity: 0.5;
               cursor: inherit;
             }
@@ -149,13 +149,13 @@
         }
       }
 
-      #boundary-wrap {
+      .boundary-wrap {
         display: flex;
         flex-direction: row;
         position: relative;
         margin: 10px 40px 18px;
 
-        #or {
+        .or {
           font-size: $font-medium;
           margin: 0 18px;
           color: rgba(var(--f52, 142, 142, 142), 1);
@@ -164,7 +164,7 @@
           flex-grow: 0;
         }
 
-        #boundary-line {
+        .boundary-line {
           background: rgba(var(--b38, 219, 219, 219), 1);
           height: 1px;
           margin-top: 0.5em;
@@ -173,13 +173,13 @@
         }
       }
 
-      #find {
+      .find {
         display: flex;
         flex-direction: column;
         padding: 8px 40px;
         text-align: center;
 
-        #find-facebook {
+        .find-facebook {
           cursor: pointer;
           margin-bottom: 8px;
 
@@ -200,54 +200,54 @@
           }
         }
 
-        #find-password {
+        .find-password {
           color: rgba(var(--fe0, 0, 55, 107), 1);
           margin-top: 12px;
         }
       }
     }
 
-    #join-wrap {
+    .join-wrap {
       border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
       background: #fff;
       padding: 25px;
       text-align: center;
       margin-bottom: 10px;
 
-      span {
+      .no-id {
         font-size: $font-large;
         color: rgba(var(--i1d, 38, 38, 38), 1);
       }
 
-      a {
+      .sign-up {
         font-size: $font-large;
         color: rgba(var(--d69, 0, 149, 246), 1);
         font-weight: $font-bold;
       }
     }
 
-    #download-wrap {
+    .download-wrap {
       display: flex;
       flex-direction: column;
       text-align: center;
 
-      p {
+      .app-download-info {
         margin: 10px 0;
         color: rgba(var(--i1d, 38, 38, 38), 1);
         font-size: $font-large;
         line-height: 18px;
       }
 
-      #btn-wrap {
+      .btn-wrap {
         margin: 10px 0;
 
-        a {
+        .logo_wrap {
           display: inline-block;
           width: 136px;
           height: 40px;
           margin: 0 2px;
 
-          img {
+          .app-logo {
             @include elementSize(100%, 100%);
           }
         }
@@ -256,7 +256,7 @@
   }
 }
 
-#footer {
+.footer-list {
   margin-bottom: 52px;
   max-width: 935px;
   margin: 0 auto;
@@ -274,18 +274,18 @@
     }
   }
 
-  #copyright {
+  .copyright-wrap {
     text-align: center;
     margin: 12px 0;
 
-    #languege {
+    .languege {
       background: transparent;
       border: none;
       font-size: $font-small;
       color: rgba(var(--f52, 142, 142, 142), 1);
     }
 
-    span {
+    .copyright {
       color: rgba(var(--f52, 142, 142, 142), 1);
       margin-left: 15px;
     }

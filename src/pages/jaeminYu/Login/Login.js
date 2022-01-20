@@ -56,10 +56,10 @@ export const Login = () => {
 
   return (
     <div>
-      <main id="LoginMain">
-        <aside id="aside">
-          <div id="phone-wrap">
-            <div id="img-wrap">
+      <main className="LoginMain">
+        <aside className="aside">
+          <div className="phone-wrap">
+            <div className="img-wrap">
               {MOBILE_IMG_LIST_ELEMENT.map(el => (
                 <img
                   key={el.id}
@@ -71,11 +71,11 @@ export const Login = () => {
             </div>
           </div>
         </aside>
-        <section id="section">
-          <div id="login-wrap">
-            <div id="login-box">
-              <div id="logo" className="img-sprite"></div>
-              <div id="input-wrap">
+        <section className="login-input-section">
+          <div className="login-wrap">
+            <div className="login-box">
+              <div className="insta-logo img-sprite"></div>
+              <div className="input-wrap">
                 {INPUT_FIX_DATA.map(el => (
                   <label className="user-loing-txt" key={el.id}>
                     <input
@@ -90,7 +90,7 @@ export const Login = () => {
 
                 <label className="user-loing-txt">
                   <button
-                    id="login-btn"
+                    className="login-btn"
                     onClick={FetchHandler}
                     disabled={btnAction}
                   >
@@ -99,37 +99,47 @@ export const Login = () => {
                 </label>
               </div>
             </div>
-            <div id="boundary-wrap">
-              <div id="boundary-line"></div>
-              <span id="or">또는</span>
-              <div id="boundary-line"></div>
+            <div className="boundary-wrap">
+              <div className="boundary-line"></div>
+              <span className="or">또는</span>
+              <div className="boundary-line"></div>
             </div>
-            <div id="find">
-              <div id="find-facebook">
+            <div className="find">
+              <div className="find-facebook">
                 <span className="facebook-icon img-sprite"></span>
                 <span className="login-txt">Facebook으로 로그인</span>
               </div>
-              <p id="find-password">비밀번호를 잊으셨나요?</p>
+              <p className="find-password">비밀번호를 잊으셨나요?</p>
             </div>
           </div>
-          <div id="join-wrap">
-            <span>계정이 없으신가요?</span>
-            <a href="#">가입하기</a>
+          <div className="join-wrap">
+            <span className="no-id">계정이 없으신가요?</span>
+            <a href="#" className="sign-up">
+              가입하기
+            </a>
           </div>
-          <div id="download-wrap">
-            <p>앱을 다운로드하세요.</p>
-            <div id="btn-wrap">
-              <a href="#">
-                <img src="/images/jaeminYu/appStore.png" alt="app-store" />
+          <div className="download-wrap">
+            <p className="app-download-info">앱을 다운로드하세요.</p>
+            <div className="btn-wrap">
+              <a href="#" className="logo_wrap">
+                <img
+                  src="/images/jaeminYu/appStore.png"
+                  alt="app-store"
+                  className="app-logo"
+                />
               </a>
-              <a href="#">
-                <img src="/images/jaeminYu/googlePlay.png" alt="google-play" />
+              <a href="#" className="logo_wrap">
+                <img
+                  src="/images/jaeminYu/googlePlay.png"
+                  alt="google-play"
+                  className="app-logo"
+                />
               </a>
             </div>
           </div>
         </section>
       </main>
-      <footer id="footer">
+      <footer className="footer-list">
         <ul>
           {FOOTER_LIST_ELEMENT.map(el => (
             <li key={el.id}>
@@ -137,15 +147,15 @@ export const Login = () => {
             </li>
           ))}
         </ul>
-        <div id="copyright">
-          <select name="languege" id="languege">
+        <div className="copyright-wrap">
+          <select name="languege" className="languege">
             {LANGUEGE_LIST_ELEMENT.map(el => (
               <option key={el.id} value={el.value}>
                 {el.languege}
               </option>
             ))}
           </select>
-          <span>© 2022 Instagram from Meta</span>
+          <span className="copyright">© 2022 Instagram from Meta</span>
         </div>
       </footer>
     </div>
