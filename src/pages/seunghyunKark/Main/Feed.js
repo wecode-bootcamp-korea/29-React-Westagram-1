@@ -14,27 +14,43 @@ function Feed() {
   const [comment, setComment] = useState('');
   const handleChange = ({ target }) => setComment(target.value);
 
+  /*
   const [commentList, setCommentList] = useState([]);
   const addComment = event =>
     setCommentList(commentList => [...commentList, event]);
+  */
 
   const [feed, setFeed] = useState([]);
 
   const commentUpload = () => {
-    addComment(comment);
-    setComment('');
+    if (!comment === '') {
+      fetch('comment url', {
+        method: 'POST',
+        body: JSON.stringify({
+          content: comment,
+        }),
+      })
+        .then(res => res.json())
+        .then(res => {});
+      setComment('');
+    }
   };
   const commentEnterUpload = event => {
-    if (event.key === 'Enter') {
-      addComment(comment);
+    if (!comment === '' && event.key === 'Enter') {
+      fetch('comment url', {
+        method: 'POST',
+        body: JSON.stringify({
+          content: comment,
+        }),
+      })
+        .then(res => res.json())
+        .then(res => {});
       setComment('');
     }
   };
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/seunghyunKark/feed.json', {
-      method: 'GET',
-    })
+    fetch('http://localhost:3000/data/seunghyunKark/feed.json')
       .then(res => res.json())
       .then(data => {
         setFeed(data);

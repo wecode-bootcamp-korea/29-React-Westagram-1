@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Login.scss';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { FaFacebookSquare } from 'react-icons/fa';
 
 function Login(props) {
@@ -35,13 +35,13 @@ function Login(props) {
   const handlePwInput = ({ target }) => {
     setPwValue(target.value);
     if (idValue.includes('@') && pwValue.length > 6) {
-      setOpa({ opacity: 1 });
+      setSubmit('submit-true');
     } else {
-      setOpa({ opacity: 0.5 });
+      setSubmit('submit');
     }
   };
 
-  const [opa, setOpa] = useState({ opacity: 0.5 });
+  const [submit, setSubmit] = useState('submit');
 
   //렌더링 하는 곳
   return (
@@ -66,17 +66,17 @@ function Login(props) {
               value={pwValue}
               onChange={handlePwInput}
             />
-            <button className="submit" style={opa} onClick={validation}>
+            <button className={submit} onClick={validation}>
               로그인
             </button>
           </section>
           <section>
-            <div>
-              <div className="or">또는</div>
+            <div className="orWrapper">
+              <span>또는</span>
             </div>
 
-            <div>
-              <FaFacebookSquare />
+            <div className="headbook">
+              <FaFacebookSquare size="20px" />
               headbook으로 로그인 하기
             </div>
             <div className="forgotPassword">비밀번호를 잊으셨나요?</div>
