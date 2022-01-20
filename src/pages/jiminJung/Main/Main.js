@@ -1,10 +1,8 @@
 import React from 'react';
-
-import './Main.scss';
-
 import Nav from '../../../components/Nav/Nav';
 import Feeds from './Feeds';
 import MainRight from './MainRight';
+import './Main.scss';
 
 function Main() {
   return (

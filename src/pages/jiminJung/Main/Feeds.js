@@ -14,7 +14,7 @@ function Feeds() {
   const [feeds, setFeeds] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/dataJimn/feedData.json')
+    fetch('/dataJimn/feedData.json')
       .then(res => res.json())
       .then(data => {
         setFeeds(data);
@@ -29,12 +29,6 @@ function Feeds() {
             <div className="feed" key={x.id}>
               <div className="feedUserBar">
                 <User userList={x.userList} />
-                {/* <User
-                  imgClassname="feedUserImg"
-                  imgUrl="https://images.pexels.com/photos/7589278/pexels-photo-7589278.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                  imgAlt="userimg"
-                  name="jiiiiiiiiiimiiiiiiiiii"
-                /> */}
                 <div className="feedMore">···</div>
               </div>
               <div className="feedImgWrapper">

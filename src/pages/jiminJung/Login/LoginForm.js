@@ -6,12 +6,14 @@ function LoginForm({ onChangeId, onKeyUpId, onChangePw, onKeyUpPw, disabled }) {
   return (
     <div className="loginForm">
       <input
+        name="id"
         onChange={onChangeId}
         onKeyUp={onKeyUpId}
         type="text"
         placeholder="전화번호, 사용자 이름 또는 이메일"
       />
       <input
+        name="pw"
         onChange={onChangePw}
         onKeyUp={onKeyUpPw}
         type="password"

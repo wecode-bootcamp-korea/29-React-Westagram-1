@@ -1,48 +1,47 @@
-.recommendBox{
-    width: 220px;
-    border: 1px solid #dbdbdb;
-    margin-bottom: 10px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
+.recommendBox {
+  width: 220px;
+  border: 1px solid #dbdbdb;
+  margin-bottom: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
 
+.recommendTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  a {
+    font-size: 12px;
+    text-decoration-line: none;
+    color: black;
+  }
 
-.recommendTitle{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    a{
-        font-size: 12px;
-        text-decoration-line: none;
-        color: black;
-    }
-    
-    p{
-        font-size: 12px;
-        color: #8e8e8e;
-        margin: 0;
-    }
+  p {
+    font-size: 12px;
+    color: #8e8e8e;
+    margin: 0;
+  }
 }
 
-.recommends{
-    height: 100px;
-    overflow: hidden;
-    .uD{
-        width: 25px;
-        height: 25px;
-    }
-    
-    .userInfo p:nth-child(1) { 
-        font-size: 12px;
-        margin: 0;
-    }
-    
-    .userInfo p:nth-child(2){
-        font-size: 12px;
-        color: #c8c8c8;
-        padding: 1px auto 10px;
-        margin: 0;
-    }
+.recommends {
+  height: 100px;
+  overflow: hidden;
+  .uD {
+    width: 25px;
+    height: 25px;
+  }
+
+  .userInfo p:nth-child(1) {
+    font-size: 12px;
+    margin: 0;
+  }
+
+  .userInfo p:nth-child(2) {
+    font-size: 12px;
+    color: #c8c8c8;
+    padding: 1px auto 10px;
+    margin: 0;
+  }
 }

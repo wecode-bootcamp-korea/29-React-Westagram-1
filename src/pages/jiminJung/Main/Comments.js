@@ -15,17 +15,16 @@ function Comments({ postedList }) {
   };
   const registerComment = () => {
     addComment(comment);
-    setComment('');
   };
 
   return (
     <>
       <ul>
-        {postedList.map(postedList => (
-          <li className="postedComment" key={postedList.id}>
+        {postedList.map(posted => (
+          <li className="postedComment" key={posted.id}>
             <div className="commentText">
-              <a href="/"> {postedList.userName} </a>
-              <span> {postedList.content} </span>
+              <a href="/"> {posted.userName} </a>
+              <span> {posted.content} </span>
             </div>
             <FaRegHeart className="commentHeart" size="15px" />
           </li>

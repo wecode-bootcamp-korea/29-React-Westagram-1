@@ -1,23 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import LoginForm from './LoginForm.js';
 import './Login.scss';
 
 function Login() {
-  const [idInput, setIdInput] = useState('');
-  const [pwInput, setPwInput] = useState('');
-  const [isBtn, setIsBtn] = useState(true);
+  const [formInput, setFormInput] = useState({
+    id: '',
+    pw: '',
+  });
+  const [isBtnActive, setIsBtnActive] = useState(true);
+  const handleFormInput = e => {
+    setFormInput({ ...formInput, [e.target.name]: e.target.value });
+  };
+  const handleBtn = () => {
+    const isActive = !(formInput.id.includes('@') && formInput.pw.length > 4);
+    setIsBtnActive(isActive);
+  };
 
-  const handleIdInput = e => {
-    setIdInput(e.target.value);
-  };
-  const handlePwInput = e => {
-    setPwInput(e.target.value);
-  };
-  const handleBtn = b => {
-    idInput.includes('@') && pwInput.length > 4
-      ? setIsBtn(false)
-      : setIsBtn(true);
-  };
+  useEffect(handleBtn, [formInput.id]);
 
   return (
     <div className="loginWrapper">
@@ -28,11 +27,11 @@ function Login() {
           src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png"
         />
         <LoginForm
-          onChangeId={handleIdInput}
+          onChangeId={handleFormInput}
           onKeyUpId={handleBtn}
-          onChangePw={handlePwInput}
+          onChangePw={handleFormInput}
           onKeyUpPw={handleBtn}
-          disabled={isBtn}
+          disabled={isBtnActive}
         />
 
         <a href="LostPassword"> 비밀번호를 잊으셨나요?</a>

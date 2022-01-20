@@ -6,7 +6,7 @@ function Comment({ commentList }) {
   return (
     <>
       {commentList.map(comment => (
-        <li className="newComment" key={comment.index}>
+        <li className="newComment" key={comment.id}>
           <div className="newCommentText">
             <a href="/">userName</a>
             <span>{comment}</span>
