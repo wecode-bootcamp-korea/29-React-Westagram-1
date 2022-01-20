@@ -1,7 +1,18 @@
+.mainLeft {
+  padding-top: 60px;
+  background-color: #fafafa;
+  display: flex;
+}
+
+.feeds {
+  display: flex;
+  flex-direction: column;
+}
 .feed {
   border: 1px solid #dbdbdb;
   display: flex;
   flex-direction: column;
+  margin: 5px 0;
 }
 
 .feedUserBar {

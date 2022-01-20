@@ -1,3 +1,28 @@
+.postedComment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 5px;
+  .commentText {
+    display: flex;
+    align-items: baseline;
+    span {
+      font-size: 14px;
+      margin: 0 0 0 5px;
+    }
+
+    a {
+      // font-size: 14px;
+      text-decoration-line: none;
+      // color: black;
+      // font-weight: 500;
+      margin: 0;
+    }
+  }
+  .commentHeart {
+    padding-right: 5px;
+  }
+}
 .writeComment {
   position: relative;
   display: flex;

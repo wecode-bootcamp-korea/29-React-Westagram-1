@@ -1,11 +1,19 @@
 import './User.scss';
 
-function User(user) {
+function User({ userList }) {
   return (
-    <div className="user">
-      <img className={user.imgClassname} src={user.imgUrl} alt={user.imgAlt} />
-      <p>{user.name}</p>
-    </div>
+    <>
+      {userList.map(userList => (
+        <div className="user" key={userList.id}>
+          <img
+            className={userList.imgClassname}
+            src={userList.imgUrl}
+            alt={userList.imgAlt}
+          />
+          <p>{userList.name}</p>
+        </div>
+      ))}
+    </>
   );
 }
 

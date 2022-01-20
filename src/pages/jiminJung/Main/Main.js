@@ -3,7 +3,7 @@ import React from 'react';
 import './Main.scss';
 
 import Nav from '../../../components/Nav/Nav';
-import MainLeft from './MainLeft';
+import Feeds from './Feeds';
 import MainRight from './MainRight';
 
 function Main() {
@@ -11,7 +11,7 @@ function Main() {
     <>
       <Nav />
       <div className="mainWrapper">
-        <MainLeft />
+        <Feeds />
         <MainRight />
       </div>
     </>

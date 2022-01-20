@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import PostedComments from './PostedComments';
+import React, { useState } from 'react';
 import Comment from './Comment';
 import './Comments.scss';
+import { FaRegHeart } from 'react-icons/fa';
 
-function Comments() {
+function Comments({ postedList }) {
   const [comment, setComment] = useState('');
-  const [postedList, setPostedList] = useState([]);
   const [commentList, setCommentList] = useState([]);
 
   const handleComment = e => {
@@ -19,20 +18,18 @@ function Comments() {
     setComment('');
   };
 
-  useEffect(() => {
-    fetch('http://localhost:3000/dataJimn/commentData.json')
-      .then(res => res.json())
-      .then(data => {
-        setPostedList(data);
-      });
-  }, []);
-
   return (
     <>
       <ul>
-        {postedList.map(x => {
-          return <PostedComments userName={x.userName} content={x.content} />;
-        })}
+        {postedList.map(postedList => (
+          <li className="postedComment" key={postedList.id}>
+            <div className="commentText">
+              <a href="/"> {postedList.userName} </a>
+              <span> {postedList.content} </span>
+            </div>
+            <FaRegHeart className="commentHeart" size="15px" />
+          </li>
+        ))}
         <Comment commentList={commentList} />
       </ul>
       <div className="writeComment">
