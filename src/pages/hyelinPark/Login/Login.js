@@ -1,15 +1,19 @@
-import './Login.scss';
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Login.scss';
 
 function Login() {
-  const [inputId, SetInputId] = useState(false);
-  const [inputPassword, SetInputPassword] = useState(false);
+  const [values, setValues] = useState({ Id: '', Password: '' });
+  const handleBtn = !(values.Id.includes('@') && values.Password.length > 4);
+
+  const handleInput = e => {
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
+  };
 
   const navigate = useNavigate();
   const goToMain = () => {
-    navigate('/Main');
+    navigate('/Main-hyelinPark');
   };
 
   return (
@@ -19,21 +23,21 @@ function Login() {
         <form className="inputBox">
           <input
             type="text"
+            name="Id"
+            value={values.Id}
             className="loginId"
             placeholder="전화번호, 사용자 이름 또는 이메일"
-            onChange={e => SetInputId(e.target.value.includes('@'))}
+            onChange={handleInput}
           />
           <input
             type="password"
+            name="Password"
+            value={values.Password}
             className="loginPassword"
             placeholder="비밀번호"
-            onChange={e => SetInputPassword(e.target.value.length > 5)}
+            onChange={handleInput}
           />
-          <button
-            className="loginBtn"
-            disabled={!inputId || !inputPassword}
-            onClick={goToMain}
-          >
+          <button className="loginBtn" onClick={goToMain} disabled={handleBtn}>
             로그인
           </button>
         </form>

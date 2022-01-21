@@ -167,6 +167,16 @@
                 font-weight: bold;
                 margin-right: 6px;
               }
+              .delete {
+                border: none;
+                background-color: white;
+                text-align: center;
+                color: rgb(153, 147, 147, 0.7);
+
+                &:hover {
+                  color: rgb(153, 147, 147);
+                }
+              }
             }
           }
           .commentWrap {

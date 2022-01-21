@@ -1,10 +1,13 @@
 import React from 'react';
 
-const NewComment = props => {
+const NewComment = ({ comment, onRemove }) => {
   return (
     <li id="jinxsik">
-      <span className="userName">{props.comment.userName}</span>
-      <span className="commentValue">{props.comment.comment}</span>
+      <span className="userName">{comment.userName}</span>
+      <span className="commentValue">{comment.comment}</span>
+      <button className="delete" onClick={() => onRemove(comment.id)}>
+        X
+      </button>
     </li>
   );
 };
