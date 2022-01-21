@@ -1,0 +1,26 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  .loginBox {
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .logoImg {
+      height: 45px;
+      margin: 30px auto;
+    }
+    .lostPassword {
+      color: #00376b;
+      text-decoration: none;
+      font-size: 10px;
+      margin: 20px 0;
+    }
+  }
+}

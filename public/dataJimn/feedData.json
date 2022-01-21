@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "feedImgUrl": "https://images.pexels.com/photos/1698482/pexels-photo-1698482.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "feedUserName": "Brown",
+    "feedContent": "Come on let's go to bed we gonna rock the night away who did that to you",
+    "postedList": [
+      {
+        "id": 1,
+        "userName": "Miffy",
+        "content": "hey~"
+      },
+      {
+        "id": 2,
+        "userName": "Mickey",
+        "content": "Wow"
+      },
+      {
+        "id": 3,
+        "userName": "Brown",
+        "content": "...!"
+      }
+    ],
+    "userList": [
+      {
+        "id": 1,
+        "imgClassname": "feedUserImg",
+        "imgUrl": "https://images.pexels.com/photos/7589278/pexels-photo-7589278.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "imgAlt": "userimg",
+        "name": "Brown"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "feedImgUrl": "https://images.pexels.com/photos/7663048/pexels-photo-7663048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "feedUserName": "Mickey",
+    "feedContent": "babe If you're not in the right mood to sleep now then, Come on, let's drink and have very unmanageable day",
+    "postedList": [
+      {
+        "id": 1,
+        "userName": "gabi",
+        "content": "hey~"
+      },
+      {
+        "id": 2,
+        "userName": "honey-j",
+        "content": "Wow"
+      },
+      {
+        "id": 3,
+        "userName": "monika",
+        "content": "...!"
+      }
+    ],
+    "userList": [
+      {
+        "id": 2,
+        "imgClassname": "feedUserImg",
+        "imgUrl": "https://images.pexels.com/photos/7589278/pexels-photo-7589278.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "imgAlt": "userimg",
+        "name": "Mickey"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "feedImgUrl": "https://images.pexels.com/photos/4321505/pexels-photo-4321505.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "feedUserName": "Miffy",
+    "feedContent": "Come on let's go to bed we gonna rock the night away who did that to you, babe If you're not in the right mood to sleep now then, Come on, let's drink and have very unmanageable day",
+    "postedList": [
+      {
+        "id": 1,
+        "userName": "Miffy",
+        "content": "hey~"
+      },
+      {
+        "id": 2,
+        "userName": "Mickey",
+        "content": "Wow"
+      },
+      {
+        "id": 3,
+        "userName": "Brown",
+        "content": "...!"
+      }
+    ],
+    "userList": [
+      {
+        "id": 3,
+        "imgClassname": "feedUserImg",
+        "imgUrl": "https://images.pexels.com/photos/7589278/pexels-photo-7589278.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "imgAlt": "userimg",
+        "name": "Miffy"
+      }
+    ]
+  }
+]

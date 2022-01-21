@@ -1,12 +1,19 @@
-import Nav from '../../../components/Nav/Nav';
 import React from 'react';
+import Nav from '../../../components/Nav/Nav';
+import Feeds from './Feeds';
+import MainRight from './MainRight';
+import './Main.scss';
 
-export const Main = () => {
+function Main() {
   return (
-    <div>
+    <>
       <Nav />
-    </div>
+      <div className="mainWrapper">
+        <Feeds />
+        <MainRight />
+      </div>
+    </>
   );
-};
+}
 
 export default Main;
