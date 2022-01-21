@@ -6,6 +6,7 @@ function LoginForm({ onChangeId, onKeyUpId, onChangePw, onKeyUpPw, disabled }) {
   return (
     <div className="loginForm">
       <input
+        className="input id"
         name="id"
         onChange={onChangeId}
         onKeyUp={onKeyUpId}
@@ -13,6 +14,7 @@ function LoginForm({ onChangeId, onKeyUpId, onChangePw, onKeyUpPw, disabled }) {
         placeholder="전화번호, 사용자 이름 또는 이메일"
       />
       <input
+        className="input pw"
         name="pw"
         onChange={onChangePw}
         onKeyUp={onKeyUpPw}
@@ -20,7 +22,9 @@ function LoginForm({ onChangeId, onKeyUpId, onChangePw, onKeyUpPw, disabled }) {
         placeholder="비밀번호"
       />
       <Link to="/main-jiminJung">
-        <button disabled={disabled ? true : false}>로그인</button>
+        <button className="loginBtn" disabled={disabled ? true : false}>
+          로그인
+        </button>
       </Link>
     </div>
   );

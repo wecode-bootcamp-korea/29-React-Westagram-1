@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import LoginForm from './LoginForm.js';
 import './Login.scss';
 
@@ -13,8 +13,8 @@ function Login() {
   const isActive = !(formInput.id.includes('@') && formInput.pw.length > 4);
 
   return (
-    <div className="loginWrapper">
-      <div className="login">
+    <div className="login">
+      <div className="loginBox">
         <img
           className="logoImg"
           alt=""
@@ -25,7 +25,10 @@ function Login() {
           onChangePw={handleFormInput}
           disabled={isActive}
         />
-        <a href="LostPassword"> 비밀번호를 잊으셨나요?</a>
+        <a className="lostPassword" href="LostPassword">
+          {' '}
+          비밀번호를 잊으셨나요?
+        </a>
       </div>
     </div>
   );
