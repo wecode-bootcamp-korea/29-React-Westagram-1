@@ -7,16 +7,10 @@ function Login() {
     id: '',
     pw: '',
   });
-  const [isBtnActive, setIsBtnActive] = useState(true);
   const handleFormInput = e => {
     setFormInput({ ...formInput, [e.target.name]: e.target.value });
   };
-  const handleBtn = () => {
-    const isActive = !(formInput.id.includes('@') && formInput.pw.length > 4);
-    setIsBtnActive(isActive);
-  };
-
-  useEffect(handleBtn, [formInput.id]);
+  const isActive = !(formInput.id.includes('@') && formInput.pw.length > 4);
 
   return (
     <div className="loginWrapper">
@@ -28,12 +22,9 @@ function Login() {
         />
         <LoginForm
           onChangeId={handleFormInput}
-          onKeyUpId={handleBtn}
           onChangePw={handleFormInput}
-          onKeyUpPw={handleBtn}
-          disabled={isBtnActive}
+          disabled={isActive}
         />
-
         <a href="LostPassword"> 비밀번호를 잊으셨나요?</a>
       </div>
     </div>
