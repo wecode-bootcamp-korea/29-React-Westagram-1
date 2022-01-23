@@ -1,0 +1,22 @@
+[
+  {
+    "id": 0,
+    "nickname": "tiger",
+    "location": "백두산",
+    "miniThumbnail": "/images/jaeminYu/user_tiger.jpeg",
+    "img": "/images/jaeminYu/feed_02.jpg",
+    "description": "날씨가 너무나 좋다. 백두산 풍경도 정말 좋다. 대한민국 짱짱!",
+    "freindThumbnail": "/images/jaeminYu/user_dolphin.jpeg",
+    "freindId": "dolphin"
+  },
+  {
+    "id": 1,
+    "nickname": "dolphin",
+    "location": "북극",
+    "miniThumbnail": "/images/jaeminYu/user_dolphin.jpeg",
+    "img": "/images/jaeminYu/feed_01.jpg",
+    "description": "너구리가 북극으로 놀러왔다. 춥지만 재밌었다고 한다. 나도 즐거웠다.",
+    "freindThumbnail": "/images/jaeminYu/user_tiger.jpeg",
+    "freindId": "tiger"
+  }
+]
