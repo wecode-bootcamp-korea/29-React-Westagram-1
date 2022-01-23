@@ -20,7 +20,7 @@ const Comment = props => {
       ></span>
       <span
         className="delete-btn"
-        onClick={() => props.DeleteComment(props.id)}
+        onClick={() => props.deleteComment(props.id)}
       >
         X
       </span>

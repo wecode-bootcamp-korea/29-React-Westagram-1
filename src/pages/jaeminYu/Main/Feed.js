@@ -14,7 +14,7 @@ let comment_id = 1;
 
 const Feed = props => {
   const [userComment, setUserComment] = useState('');
-  const [postBtn, setPostBtn] = useState('postingBtnInActive');
+  const [postBtn, setPostBtn] = useState(null);
   const [listElement, setListElement] = useState([]); // Event 3-1 : 댓글 추가 내용을 담기 위한 빈 배열 생성
   const [moreBtn, setMoreBtn] = useState('desc-txt-hide');
   const [likeBtn, setLikeBtn] = useState(0);
@@ -29,20 +29,19 @@ const Feed = props => {
       });
   }, []);
 
+  // Event 2 : input 입력 값이 0 을 초과하는 경우 버튼 활성화 : disabled 속성을 변경하므로 not연산자 활용
+  useEffect(() => {
+    let postBtnActive = !(userComment.length > 0);
+    setPostBtn(postBtnActive);
+  }, [userComment]);
+
   // Event 1 : input에 입력 되는 값 저장
-  const CommnetLength = event => {
+  const commnetLength = event => {
     setUserComment(event.target.value);
   };
 
-  // Event 2 : input 입력 값이 0 을 초과하는 경우 버튼 활성화
-  const CommnetBtnHandler = () => {
-    userComment.length > 0
-      ? setPostBtn('postingBtnActive')
-      : setPostBtn('postingBtnInActive');
-  };
-
   // Event 3 : 댓글 추가 (게시 글을 클릭하는 경우)
-  function UploadComment() {
+  const uploadComment = () => {
     if (userComment.length > 0) {
       const newComment = {
         id: comment_id,
@@ -59,17 +58,17 @@ const Feed = props => {
       setCommnetCount(commnetCount + 1);
       comment_id += 1;
     }
-  }
+  };
 
   // 추가 기능 : 댓글 삭제 (X버튼 클릭 할 경우)
-  function DeleteComment(listId) {
+  const deleteComment = listId => {
     setListElement(listElement.filter(el => el.id !== listId));
     setCommnetCount(commnetCount - 1);
-  }
+  };
 
   // Event 4 : 댓글 추가 (엔터를 누를 경우)
-  const CommentEnter = event => {
-    if (event.key === 'Enter' && userComment.length > 0) UploadComment();
+  const commentEnter = event => {
+    if (event.key === 'Enter' && userComment.length > 0) uploadComment();
   };
 
   // 추가 기능 : 더보기 버튼 클릭
@@ -85,8 +84,8 @@ const Feed = props => {
   };
 
   return (
-    <>
-      <article id="article">
+    <div>
+      <article className="article-wrap">
         <div className="article-header">
           <div className="article-thumbnail">
             <img src={props.miniThumbnail} alt="mini-thumnail" />
@@ -140,12 +139,6 @@ const Feed = props => {
               더 보기
             </button>
           </div>
-          <ul className="hashtag">
-            <li>#오로라</li>
-            <li>#하늘</li>
-            <li>#북극</li>
-            <li>#북극곰</li>
-          </ul>
         </div>
         <div className="article-comment-record">
           <p
@@ -163,7 +156,7 @@ const Feed = props => {
                 id={el.id}
                 nickname={el.nickname}
                 description={el.description}
-                DeleteComment={DeleteComment}
+                deleteComment={deleteComment}
               />
             ))}
           </ul>
@@ -177,22 +170,22 @@ const Feed = props => {
             type="text"
             placeholder="댓글 달기..."
             className="posting-area"
-            onChange={CommnetLength}
-            onKeyUp={CommnetBtnHandler}
+            onChange={commnetLength}
             value={userComment}
-            onKeyPress={CommentEnter}
+            onKeyPress={commentEnter}
           />
           {/* Event 3-4 : input태그에 value 속성값에 userComment를 넣어주어 초기화 값을 적용시킨다. */}
           <button
             type="button"
-            className={'posting-button' + ' ' + postBtn}
-            onClick={UploadComment}
+            className={'posting-button'}
+            onClick={uploadComment}
+            disabled={postBtn}
           >
             게시
           </button>
         </div>
       </article>
-    </>
+    </div>
   );
 };
 
