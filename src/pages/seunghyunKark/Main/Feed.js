@@ -23,7 +23,7 @@ function Feed() {
   const [feed, setFeed] = useState([]);
 
   const commentUpload = () => {
-    fetch('http://10.58.2.189:8000/login/', {
+    fetch('http:url', {
       method: 'POST',
       body: JSON.stringify({
         content: comment,

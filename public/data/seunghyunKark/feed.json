@@ -33,7 +33,7 @@
     "userName": "Song Park",
     "profileSrc": "/images/seunghyunKark/profile4.jpeg",
     "src": "/images/seunghyunKark/feed2.JPG",
-    "content": "My yummy thing",
+    "content": "생일 축하해~",
     "commentList": [
       {
         "id": 1,
@@ -50,7 +50,7 @@
       {
         "id": 3,
         "userName": "Tadatata",
-        "content": "Ci saranno persone senza tete.",
+        "content": "Tanti auguri, bella!",
         "isLiked": false
       }
     ]
