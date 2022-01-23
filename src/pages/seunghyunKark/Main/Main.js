@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './Main.scss';
+import '../common.scss';
 import Feed from './Feed';
 import Nav from '../../../components/Nav/Nav';
 import Story from './Story';
@@ -9,7 +10,7 @@ import Footer from './Footer';
 
 function Main() {
   return (
-    <div className="body2">
+    <div className="Main">
       <div className="navWrap">
         <Nav />
       </div>

@@ -1,4 +1,4 @@
-export const recInfo = [
+export const REC_INFO = [
   { id: 1, src: '/images/seunghyunKark/profile6.jpg', user: 'alohavittoria' },
   {
     id: 2,

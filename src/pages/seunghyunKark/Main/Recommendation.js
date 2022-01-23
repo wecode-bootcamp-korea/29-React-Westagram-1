@@ -1,5 +1,5 @@
 import React from 'react';
-import { recInfo } from './recInfo';
+import { REC_INFO } from './REC_INFO.js';
 import './Recommendation.scss';
 
 function Recommendation(props) {
@@ -9,7 +9,7 @@ function Recommendation(props) {
         <div>회원님을 위한 추천</div>
         <div className="view-all">모두 보기</div>
       </div>
-      {recInfo.map(info => {
+      {REC_INFO.map(info => {
         return (
           <div className="recommendation-stack" Key={info.id}>
             <div className="recommended-users">

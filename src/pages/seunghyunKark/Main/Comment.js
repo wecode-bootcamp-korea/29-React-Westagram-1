@@ -4,10 +4,10 @@ import './Comment.scss';
 function Comment({ comments }) {
   return (
     <ul className="comment-hidden">
-      {comments.map(data => (
-        <li key={data.id} className="comment-hidden">
-          <span className="comment-id"> {data.userName}</span>
-          {data.content}
+      {comments.map(comment => (
+        <li key={comment.id} className="comment-hidden">
+          <span className="comment-id"> {comment.userName}</span>
+          {comment.content}
         </li>
       ))}
     </ul>

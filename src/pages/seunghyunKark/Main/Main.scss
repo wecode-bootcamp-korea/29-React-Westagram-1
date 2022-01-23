@@ -1,42 +1,6 @@
-/*General*/
-@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap');
-@font-face {
-  font-family: system;
-  font-style: normal;
-  font-weight: 300;
-  letter-spacing: 1;
-  src: local('.SFNSText-Light'), local('.HelveticaNeueDeskInterface-Light'),
-    local('.LucidaGrandeUI'), local('Ubuntu Light'), local('Segoe UI Light'),
-    local('Roboto-Light'), local('DroidSans'), local('Tahoma');
-}
+@import '../variables.scss';
 
-* {
-  font-family: 'system', sans-serif;
-  font-size: 14px;
-  -webkit-font-smoothing: antialiased;
-}
-
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-  outline: none;
-}
-
-.profile-container,
-.feeds-profile,
-.feeds-like,
-.interaction-bar,
-.recommendation-header,
-.story-header,
-.story-stack,
-.recommendation-stack {
-  display: flex;
-  align-items: center;
-}
-
-.body2 {
+.Main {
   background-color: #fafafa;
   height: 100vh;
 
@@ -56,9 +20,8 @@ button:focus {
     padding: 30px 0 30px 0;
 
     img {
+      @include flex-center;
       width: 100%;
-      display: flex;
-      align-items: center;
     }
 
     section {
@@ -66,8 +29,7 @@ button:focus {
     }
 
     .main-container {
-      display: flex;
-      justify-content: center;
+      @include flex-justify;
 
       .main-right {
         width: 293px;
@@ -81,8 +43,7 @@ button:focus {
           }
 
           .profile {
-            display: flex;
-            align-items: center;
+            @include flex-center;
             padding: 18px 0 10px 0;
 
             .bold {

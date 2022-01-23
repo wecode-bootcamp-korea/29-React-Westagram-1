@@ -1,0 +1,19 @@
+@mixin flex {
+  display: flex;
+}
+
+@mixin flex-justify {
+  @include flex;
+  justify-content: center;
+}
+
+@mixin flex-center {
+  @include flex;
+  align-items: center;
+}
+
+@mixin padding16 {
+  padding: 0 16px;
+}
+
+$border-style: 1px solid #dbdbdb;

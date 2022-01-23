@@ -1,22 +1,18 @@
-.body2 {
-  main {
-    .main-container {
-      display: flex;
-      justify-content: center;
+@import '../variables.scss';
 
-      .main-right {
-        width: 293px;
-        .footer {
-          font-size: 11px;
-          color: #c7c7c7;
-          list-style-type: none;
+.main-container {
+  @include flex-justify;
 
-          .footerLinks {
-            margin: 0 5px 0 5px;
-            display: inline;
-            hyphens: none;
-          }
-        }
+  .main-right {
+    width: 293px;
+    .footer {
+      font-size: 11px;
+      color: #c7c7c7;
+      list-style-type: none;
+
+      .footerLinks {
+        margin: 0 5px 0 5px;
+        display: inline;
       }
     }
   }

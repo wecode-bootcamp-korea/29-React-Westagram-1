@@ -1,31 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap');
-@font-face {
-  font-family: system;
-  font-style: normal;
-  font-weight: 300;
-  letter-spacing: 1;
-  src: local('.SFNSText-Light'), local('.HelveticaNeueDeskInterface-Light'),
-    local('.LucidaGrandeUI'), local('Ubuntu Light'), local('Segoe UI Light'),
-    local('Roboto-Light'), local('DroidSans'), local('Tahoma');
-}
+@import '../variables.scss';
 
-* {
-  font-family: 'system', sans-serif;
-  font-size: 14px;
-  -webkit-font-smoothing: antialiased;
-}
-
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-  outline: none;
-}
-
-$border-style: 1px solid #dbdbdb;
-
-.body {
+.Login {
   height: 100vh;
   background-color: #fafafa;
   display: flex;
@@ -81,19 +56,14 @@ $border-style: 1px solid #dbdbdb;
           background-color: #0095f6;
           border-radius: 3px;
           font-weight: bold;
-          opacity: 0.5;
-        }
 
-        .submit-true {
-          margin-top: 12px;
-          width: 268px;
-          height: 30px;
-          border: none;
-          color: #fff;
-          background-color: #0095f6;
-          border-radius: 3px;
-          font-weight: bold;
-          opacity: 1;
+          &:disabled {
+            opacity: 0.5;
+          }
+
+          &:enabled {
+            opacity: 1;
+          }
         }
       }
       section:nth-child(3) {
@@ -106,7 +76,7 @@ $border-style: 1px solid #dbdbdb;
           width: 268px;
           margin: 20px 0 18px 0;
           text-align: center;
-          border-bottom: 1px solid #dbdbdb;
+          border-bottom: $border-style;
           line-height: 0.05em;
 
           span {

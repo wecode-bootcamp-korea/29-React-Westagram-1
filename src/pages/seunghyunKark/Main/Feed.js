@@ -23,34 +23,31 @@ function Feed() {
   const [feed, setFeed] = useState([]);
 
   const commentUpload = () => {
-    if (!comment === '') {
-      fetch('comment url', {
-        method: 'POST',
-        body: JSON.stringify({
-          content: comment,
-        }),
-      })
-        .then(res => res.json())
-        .then(res => {});
-      setComment('');
+    fetch('http://10.58.2.189:8000/login/', {
+      method: 'POST',
+      body: JSON.stringify({
+        content: comment,
+      }),
+    })
+      .then(res => res.json())
+      .then(res => {});
+    setComment('');
+  };
+
+  const commentClickUpload = () => {
+    if (comment === !'') {
+      commentUpload();
     }
   };
+
   const commentEnterUpload = event => {
     if (!comment === '' && event.key === 'Enter') {
-      fetch('comment url', {
-        method: 'POST',
-        body: JSON.stringify({
-          content: comment,
-        }),
-      })
-        .then(res => res.json())
-        .then(res => {});
-      setComment('');
+      commentUpload();
     }
   };
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/seunghyunKark/feed.json')
+    fetch('http://localhost:3000/data/seunghyunKark/FEED.json')
       .then(res => res.json())
       .then(data => {
         setFeed(data);
@@ -92,7 +89,7 @@ function Feed() {
               </div>
               <p>
                 <span className="bold">jiheejeon.works</span>님{' '}
-                <span class="bold">외 4명</span>이 좋아합니다
+                <span className="bold">외 4명</span>이 좋아합니다
               </p>
             </div>
             <article className="feed-content">
@@ -112,7 +109,7 @@ function Feed() {
                 onChange={handleChange}
                 onKeyUp={commentEnterUpload}
               />
-              <button className="add-comment" onClick={commentUpload}>
+              <button className="add-comment" onClick={commentClickUpload}>
                 게시
               </button>
             </div>
