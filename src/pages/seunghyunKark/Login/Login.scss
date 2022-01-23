@@ -1,0 +1,153 @@
+@import '../variables.scss';
+
+.Login {
+  height: 100vh;
+  background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .main1 {
+    width: 350px;
+
+    .login-container {
+      border: $border-style;
+      background-color: #fff;
+      border-radius: 3px;
+      margin: 0 0 10px 0;
+
+      section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      section:nth-child(1) {
+        header {
+          font-size: 48px;
+          font-family: 'Lobster Two', cursive;
+          margin: 32px auto 12px;
+        }
+      }
+      section:nth-child(2) {
+        flex-direction: column;
+        margin: 24px 0 0 0;
+
+        input {
+          padding: 0 0 0 8px;
+          width: 268px;
+          height: 38px;
+          border: $border-style;
+          background-color: #fafafa;
+          font-size: 12px;
+          margin: 0 0 6px 0;
+          border-radius: 3px;
+
+          &:focus {
+            border: 1px solid #929292;
+          }
+        }
+
+        .submit {
+          margin-top: 12px;
+          width: 268px;
+          height: 30px;
+          border: none;
+          color: #fff;
+          background-color: #0095f6;
+          border-radius: 3px;
+          font-weight: bold;
+
+          &:disabled {
+            opacity: 0.5;
+          }
+
+          &:enabled {
+            opacity: 1;
+          }
+        }
+      }
+      section:nth-child(3) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .orWrapper {
+          width: 268px;
+          margin: 20px 0 18px 0;
+          text-align: center;
+          border-bottom: $border-style;
+          line-height: 0.05em;
+
+          span {
+            font-size: 13px;
+            color: #8e8e8e;
+            background-color: #fff;
+            padding: 0 18px;
+            font-weight: bold;
+          }
+        }
+
+        .headbook {
+          color: #385185;
+          font-weight: bold;
+          margin: 10px 0 0 0;
+
+          svg {
+            margin-right: 8px;
+            vertical-align: text-bottom;
+          }
+        }
+
+        .forgotPassword {
+          margin: 20px 0 20px 0;
+          font-size: 12px;
+          color: #00376b;
+        }
+      }
+    }
+    .footer {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      section:nth-child(1) {
+        border: $border-style;
+        background-color: #fff;
+        border-radius: 3px;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        span {
+          font-weight: bold;
+          color: #0095f6;
+          margin-left: 5px;
+        }
+      }
+      section:nth-child(2) {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        div:nth-child(1) {
+          display: flex;
+          justify-content: center;
+          margin: 15px 0;
+        }
+
+        .appbadgeContainer {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+
+          img {
+            width: 136px;
+          }
+          img:nth-child(1) {
+            padding-right: 7px;
+          }
+        }
+      }
+    }
+  }
+}

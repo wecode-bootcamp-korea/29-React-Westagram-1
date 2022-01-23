@@ -1,0 +1,73 @@
+@import '../variables.scss';
+
+.Main {
+  background-color: #fafafa;
+  height: 100vh;
+
+  input {
+    border: none;
+  }
+
+  .bold {
+    font-weight: 600;
+  }
+
+  .navWrap {
+    height: 60px;
+  }
+
+  main {
+    padding: 30px 0 30px 0;
+
+    img {
+      @include flex-center;
+      width: 100%;
+    }
+
+    section {
+      background-color: #fff;
+    }
+
+    .main-container {
+      @include flex-justify;
+
+      .main-right {
+        width: 293px;
+        .main-right-fixing {
+          .aside-profile-img-container {
+            width: 32px;
+            height: 32px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-right: 12px;
+          }
+
+          .profile {
+            @include flex-center;
+            padding: 18px 0 10px 0;
+
+            .bold {
+              margin-bottom: 2px;
+            }
+
+            .profile-img-container {
+              width: 56px;
+              height: 56px;
+              overflow: hidden;
+              border-radius: 28px;
+              margin-right: 18px;
+            }
+            #profile-info {
+              .name {
+                color: #8e8e8e;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*footer*/
